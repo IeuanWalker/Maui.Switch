@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="App.Examples.Theme1Switch"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:switch="clr-namespace:CustomSwitch;assembly=CustomSwitch">
+    <switch:CustomSwitch BackgroundColor="White"
+                         HeightRequest="50"
+                         IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         KnobColor="Transparent"
+                         KnobHeight="36"
+                         KnobLimit="Boundary"
+                         KnobWidth="45"
+                         StrokeThickness="3"
+                         SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
+                         Toggled="CustomSwitch_Toggled"
+                         ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         WidthRequest="90">
+        <switch:CustomSwitch.StrokeShape>
+            <RoundRectangle CornerRadius="20" />
+        </switch:CustomSwitch.StrokeShape>
+        <switch:CustomSwitch.KnobStrokeShape>
+            <RoundRectangle CornerRadius="18" />
+        </switch:CustomSwitch.KnobStrokeShape>
+        <switch:CustomSwitch.KnobContent>
+            <StackLayout Orientation="Horizontal">
+                <FlexLayout x:Name="Flex"
+                            Margin="10,0"
+                            AlignItems="Center"
+                            JustifyContent="SpaceBetween"
+                            WidthRequest="60">
+                    <Image Aspect="AspectFit"
+                           HeightRequest="35"
+                           HorizontalOptions="Center"
+                           Source="sun_icon"
+                           VerticalOptions="Center" />
+                    <Image Aspect="AspectFit"
+                           HeightRequest="35"
+                           HorizontalOptions="Center"
+                           Source="moon_icon"
+                           VerticalOptions="Center" />
+                </FlexLayout>
+            </StackLayout>
+        </switch:CustomSwitch.KnobContent>
+    </switch:CustomSwitch>
+</ContentView>

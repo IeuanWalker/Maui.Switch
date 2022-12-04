@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<ContentView x:Class="App.Examples.AndroidSwitch"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:switch="clr-namespace:CustomSwitch;assembly=CustomSwitch">
+    <switch:CustomSwitch BackgroundColor="#A6A6A6"
+                         HeightRequest="20"
+                         HorizontalOptions="Center"
+                         IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         KnobColor="#fafafa"
+                         KnobHeight="34"
+                         KnobLimit="Max"
+                         KnobWidth="34"
+                         SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
+                         Toggled="CustomSwitch_Toggled"
+                         ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         VerticalOptions="Center"
+                         WidthRequest="60">
+        <switch:CustomSwitch.StrokeShape>
+            <RoundRectangle CornerRadius="10" />
+        </switch:CustomSwitch.StrokeShape>
+        <switch:CustomSwitch.KnobStrokeShape>
+            <RoundRectangle CornerRadius="17" />
+        </switch:CustomSwitch.KnobStrokeShape>
+    </switch:CustomSwitch>
+</ContentView>

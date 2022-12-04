@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="App.Examples.IosSwitch"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:switch="clr-namespace:CustomSwitch;assembly=CustomSwitch">
+    <switch:CustomSwitch HeightRequest="40"
+                         HorizontalKnobMargin="1"
+                         IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         KnobColor="White"
+                         KnobHeight="36"
+                         KnobLimit="Boundary"
+                         KnobWidth="36"
+                         SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
+                         Toggled="CustomSwitch_Toggled"
+                         ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         WidthRequest="70">
+        <switch:CustomSwitch.StrokeShape>
+            <RoundRectangle CornerRadius="20" />
+        </switch:CustomSwitch.StrokeShape>
+        <switch:CustomSwitch.KnobStrokeShape>
+            <RoundRectangle CornerRadius="18" />
+        </switch:CustomSwitch.KnobStrokeShape>
+        <switch:CustomSwitch.BackgroundContent>
+            <StackLayout Orientation="Horizontal">
+                <Label FontAttributes="Bold"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Text=" |"
+                       TextColor="White"
+                       VerticalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center" />
+                <Label FontAttributes="Bold"
+                       FontSize="12"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Text="〇"
+                       TextColor="#BBBBBB"
+                       VerticalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+        </switch:CustomSwitch.BackgroundContent>
+    </switch:CustomSwitch>
+</ContentView>

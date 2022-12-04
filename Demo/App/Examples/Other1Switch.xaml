@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="App.Examples.Other1Switch"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:switch="clr-namespace:CustomSwitch;assembly=CustomSwitch">
+    <switch:CustomSwitch BackgroundColor="White"
+                         HeightRequest="40"
+                         IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         KnobHeight="40"
+                         KnobLimit="Boundary"
+                         KnobStrokeThickness="1"
+                         KnobWidth="60"
+                         Stroke="DarkGray"
+                         StrokeThickness="1"
+                         SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
+                         Toggled="CustomSwitch_Toggled"
+                         ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         WidthRequest="120">
+        <switch:CustomSwitch.StrokeShape>
+            <RoundRectangle CornerRadius="5" />
+        </switch:CustomSwitch.StrokeShape>
+        <switch:CustomSwitch.BackgroundContent>
+            <FlexLayout JustifyContent="SpaceEvenly">
+                <Label FontAttributes="Bold"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Text="OFF"
+                       TextColor="DarkGray"
+                       VerticalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center"
+                       WidthRequest="60" />
+                <Label FontAttributes="Bold"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Text="ON"
+                       TextColor="DarkGray"
+                       VerticalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center"
+                       WidthRequest="60" />
+            </FlexLayout>
+        </switch:CustomSwitch.BackgroundContent>
+
+        <switch:CustomSwitch.KnobContent>
+            <StackLayout Orientation="Horizontal">
+                <FlexLayout x:Name="Flex"
+                            JustifyContent="SpaceEvenly"
+                            WidthRequest="120">
+                    <Label FontAttributes="Bold"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center"
+                           Text="OFF"
+                           TextColor="#dd2424"
+                           VerticalOptions="FillAndExpand"
+                           VerticalTextAlignment="Center"
+                           WidthRequest="60" />
+                    <Label FontAttributes="Bold"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center"
+                           Text="ON"
+                           TextColor="#46d744"
+                           VerticalOptions="FillAndExpand"
+                           VerticalTextAlignment="Center"
+                           WidthRequest="60" />
+                </FlexLayout>
+            </StackLayout>
+        </switch:CustomSwitch.KnobContent>
+    </switch:CustomSwitch>
+</ContentView>
