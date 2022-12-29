@@ -1,3 +1,6 @@
+| :memo:        | This is a MAUI version of my [Xamarin NuGet](https://github.com/IeuanWalker?tab=repositories&q=switch&type=&language=&sort=)      |
+|---------------|:------------------------|
+
 | :warning:        | This is still in development and not ready for use  |
 |---------------|:------------------------|
 
