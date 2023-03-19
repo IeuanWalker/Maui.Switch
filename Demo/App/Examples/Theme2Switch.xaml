@@ -52,7 +52,6 @@
                     <Image Aspect="AspectFit"
                            HeightRequest="40"
                            HorizontalOptions="Center"
-                           Source=""
                            VerticalOptions="Center" />
                 </FlexLayout>
             </StackLayout>
