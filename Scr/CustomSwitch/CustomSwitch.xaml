@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView x:Class="CustomSwitch.CustomSwitch"
-             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <ContentView.GestureRecognizers>
+<view:SwitchView x:Class="CustomSwitch.CustomSwitch"
+                 xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:view="clr-namespace:CustomSwitch.Handler">
+    <view:SwitchView.GestureRecognizers>
         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-    </ContentView.GestureRecognizers>
-    <ContentView.Content>
+    </view:SwitchView.GestureRecognizers>
+    <view:SwitchView.Content>
         <Grid>
             <Border x:Name="BackgroundFrame"
                     Padding="0"
@@ -38,5 +39,5 @@
                     VerticalOptions="Center"
                     WidthRequest="{Binding KnobWidth, Source={RelativeSource AncestorType={x:Type ContentView}}}" />
         </Grid>
-    </ContentView.Content>
-</ContentView>
+    </view:SwitchView.Content>
+</view:SwitchView>

@@ -2,11 +2,12 @@ using System.ComponentModel;
 using System.Windows.Input;
 using CustomSwitch.Enums;
 using CustomSwitch.Events;
+using CustomSwitch.Handler;
 using Microsoft.Maui.Controls.Shapes;
 
 namespace CustomSwitch;
 
-public partial class CustomSwitch : ContentView
+public partial class CustomSwitch : SwitchView
 {
 	#region Properties
 
@@ -14,14 +15,6 @@ public partial class CustomSwitch : ContentView
 	SwitchStateEnum CurrentState { get; set; }
 
 	double _xRef;
-
-	public static readonly BindableProperty IsToggledProperty = BindableProperty.Create(nameof(IsToggled), typeof(bool), typeof(CustomSwitch), false, BindingMode.TwoWay, propertyChanged: IsToggledChanged);
-
-	public bool IsToggled
-	{
-		get => (bool)GetValue(IsToggledProperty);
-		set => SetValue(IsToggledProperty, value);
-	}
 
 	public static readonly BindableProperty ToggleAnimationDurationProperty = BindableProperty.Create(nameof(ToggleAnimationDuration), typeof(int), typeof(CustomSwitch), 100);
 
