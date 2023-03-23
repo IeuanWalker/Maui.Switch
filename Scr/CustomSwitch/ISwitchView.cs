@@ -1,4 +1,4 @@
-﻿namespace CustomSwitch.Handler;
+﻿namespace CustomSwitch;
 public interface ISwitchView : IView, IPadding
 {
 	bool IsToggled { get; set; }

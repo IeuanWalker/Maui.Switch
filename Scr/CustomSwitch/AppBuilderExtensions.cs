@@ -13,7 +13,7 @@ public static class AppBuilderExtensions
 	/// <returns><see cref="MauiAppBuilder"/> initialized for <see cref="CustomSwitch"/>.</returns>
 	public static MauiAppBuilder UseCustomSwitch(this MauiAppBuilder builder)
 	{
-		builder.ConfigureMauiHandlers(h => h.AddHandler<SwitchView, SwitchHandler>());
+		builder.ConfigureMauiHandlers(h => h.AddHandler<SwitchView, SwitchViewHandler>());
 
 		return builder;
 	}

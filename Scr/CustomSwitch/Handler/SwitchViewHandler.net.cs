@@ -1,13 +1,9 @@
 ﻿using Microsoft.Maui.Handlers;
-using UIKit;
-
 namespace CustomSwitch.Handler;
-public partial class SwitchHandler : ViewHandler<SwitchView, UIView>
+public partial class SwitchViewHandler : ViewHandler<SwitchView, object>
 {
-	protected override UIView CreatePlatformView()	
-	{
-		return new UIView();
-	}
+	/// <inheritdoc/>
+	protected override object CreatePlatformView() => throw new NotImplementedException();
 
 	public static void MapIsToggled(object handler, SwitchView switchView) => throw new NotImplementedException();
 	public static void MapContent(object handler, SwitchView switchView) => throw new NotImplementedException();

@@ -2,7 +2,7 @@
 using Microsoft.Maui.Platform;
 
 namespace CustomSwitch.Handler;
-public partial class SwitchHandler : ViewHandler<SwitchView, ContentViewGroup>
+public partial class SwitchViewHandler : ViewHandler<SwitchView, ContentViewGroup>
 {
 	protected override ContentViewGroup CreatePlatformView()
 	{
@@ -24,7 +24,7 @@ public partial class SwitchHandler : ViewHandler<SwitchView, ContentViewGroup>
 		_ = PlatformView ?? throw new InvalidOperationException($"{nameof(PlatformView)} should have been set by base class.");
 	}
 
-	static void UpdateContent(SwitchHandler handler)
+	static void UpdateContent(SwitchViewHandler handler)
 	{
 		_ = handler.PlatformView ?? throw new InvalidOperationException($"{nameof(PlatformView)} should have been set by base class.");
 		_ = handler.MauiContext ?? throw new InvalidOperationException($"{nameof(MauiContext)} should have been set by base class.");
@@ -38,7 +38,7 @@ public partial class SwitchHandler : ViewHandler<SwitchView, ContentViewGroup>
 		}
 	}
 
-	public static void MapContent(SwitchHandler handler, SwitchView page)
+	public static void MapContent(SwitchViewHandler handler, SwitchView page)
 	{
 		UpdateContent(handler);
 	}
@@ -50,5 +50,5 @@ public partial class SwitchHandler : ViewHandler<SwitchView, ContentViewGroup>
 		base.DisconnectHandler(platformView);
 	}
 
-	public static void MapIsToggled(SwitchHandler handler, SwitchView switchView) {}
+	public static void MapIsToggled(SwitchViewHandler handler, SwitchView switchView) {}
 }
