@@ -22,24 +22,24 @@
             <RoundRectangle CornerRadius="18" />
         </switch:CustomSwitch.KnobStrokeShape>
         <switch:CustomSwitch.KnobContent>
-            <StackLayout Orientation="Horizontal">
-                <FlexLayout x:Name="Flex"
-                            Margin="10,0"
-                            AlignItems="Center"
-                            JustifyContent="SpaceBetween"
-                            WidthRequest="60">
-                    <Image Aspect="AspectFit"
-                           HeightRequest="35"
-                           HorizontalOptions="Center"
-                           Source="sun_icon"
-                           VerticalOptions="Center" />
-                    <Image Aspect="AspectFit"
-                           HeightRequest="35"
-                           HorizontalOptions="Center"
-                           Source="moon_icon"
-                           VerticalOptions="Center" />
-                </FlexLayout>
-            </StackLayout>
+            <Grid x:Name="KnobContent"
+                  Margin="55,0,10,0"
+                  ColumnDefinitions="45,45"
+                  HeightRequest="40"
+                  WidthRequest="90">
+                <Image Grid.Column="0"
+                       Aspect="AspectFit"
+                       HeightRequest="35"
+                       HorizontalOptions="Center"
+                       Source="sun_icon"
+                       VerticalOptions="Center" />
+                <Image Grid.Column="1"
+                       Aspect="AspectFit"
+                       HeightRequest="35"
+                       HorizontalOptions="Center"
+                       Source="moon_icon"
+                       VerticalOptions="Center" />
+            </Grid>
         </switch:CustomSwitch.KnobContent>
     </switch:CustomSwitch>
 </ContentView>

@@ -40,7 +40,7 @@ public partial class Theme1Switch : ContentView
 
 		double t = e.Percentage * 0.01;
 
-		Flex.TranslationX = -(e.TranslateX + e.XRef);
+		KnobContent.TranslationX = -(e.TranslateX + e.XRef);
 
 		customSwitch.BackgroundColor = ColorAnimationUtil.ColorAnimation(fromBackgroundColor, toBackgroundColor, t);
 		customSwitch.Stroke = ColorAnimationUtil.ColorAnimation(fromBorderColor, toBorderColor, t);

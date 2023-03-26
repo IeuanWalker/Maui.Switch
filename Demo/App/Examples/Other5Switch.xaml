@@ -21,41 +21,44 @@
             <RoundRectangle CornerRadius="30" />
         </switch:CustomSwitch.KnobStrokeShape>
         <switch:CustomSwitch.BackgroundContent>
-            <FlexLayout Margin="15,0,15,0"
-                        AlignItems="Center"
-                        JustifyContent="SpaceBetween">
-                <Image Aspect="AspectFit"
+            <Grid Margin="15,0,15,0"
+                  ColumnDefinitions="60,60"
+                  HeightRequest="50"
+                  WidthRequest="120">
+                <Image Grid.Column="0"
+                       Aspect="AspectFit"
                        HeightRequest="30"
                        HorizontalOptions="Center"
                        Source="android_black"
                        VerticalOptions="Center" />
-                <Image Aspect="AspectFit"
+                <Image Grid.Column="1"
+                       Aspect="AspectFit"
                        HeightRequest="30"
                        HorizontalOptions="Center"
                        Source="apple_black"
                        VerticalOptions="Center" />
-            </FlexLayout>
+            </Grid>
         </switch:CustomSwitch.BackgroundContent>
 
         <switch:CustomSwitch.KnobContent>
-            <StackLayout Orientation="Horizontal">
-                <FlexLayout x:Name="Flex"
-                            Margin="15,0,15,0"
-                            AlignItems="Center"
-                            JustifyContent="SpaceBetween"
-                            WidthRequest="90">
-                    <Image Aspect="AspectFit"
-                           HeightRequest="30"
-                           HorizontalOptions="Center"
-                           Source="android_gray"
-                           VerticalOptions="Center" />
-                    <Image Aspect="AspectFit"
-                           HeightRequest="30"
-                           HorizontalOptions="Center"
-                           Source="apple_gray"
-                           VerticalOptions="Center" />
-                </FlexLayout>
-            </StackLayout>
+            <Grid x:Name="KnobContent"
+                  Margin="60,0,0,0"
+                  ColumnDefinitions="60,60"
+                  HeightRequest="50"
+                  WidthRequest="120">
+                <Image Grid.Column="0"
+                       Aspect="AspectFit"
+                       HeightRequest="30"
+                       HorizontalOptions="Center"
+                       Source="android_gray"
+                       VerticalOptions="Center" />
+                <Image Grid.Column="1"
+                       Aspect="AspectFit"
+                       HeightRequest="30"
+                       HorizontalOptions="Center"
+                       Source="apple_gray"
+                       VerticalOptions="Center" />
+            </Grid>
         </switch:CustomSwitch.KnobContent>
     </switch:CustomSwitch>
 </ContentView>

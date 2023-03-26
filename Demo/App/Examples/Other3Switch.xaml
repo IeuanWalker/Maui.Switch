@@ -5,6 +5,7 @@
              xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
     <switch:CustomSwitch BackgroundColor="White"
                          HeightRequest="35"
+                         HorizontalKnobMargin="-1"
                          IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
                          KnobColor="White"
                          KnobHeight="40"
@@ -21,23 +22,26 @@
             <RoundRectangle CornerRadius="20" />
         </switch:CustomSwitch.KnobStrokeShape>
         <switch:CustomSwitch.BackgroundContent>
-            <StackLayout Orientation="Horizontal">
-                <Label FontAttributes="Bold"
-                       HorizontalOptions="FillAndExpand"
-                       HorizontalTextAlignment="Center"
+            <Grid ColumnDefinitions="45,45"
+                  HeightRequest="35"
+                  WidthRequest="90">
+                <Label Grid.Column="0"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="12"
+                       HorizontalOptions="Center"
                        Text="ON"
                        TextColor="White"
-                       VerticalOptions="FillAndExpand"
                        VerticalTextAlignment="Center" />
-                <Label FontAttributes="Bold"
+                <Label Grid.Column="1"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
                        FontSize="12"
-                       HorizontalOptions="FillAndExpand"
-                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
                        Text="OFF"
                        TextColor="White"
-                       VerticalOptions="FillAndExpand"
                        VerticalTextAlignment="Center" />
-            </StackLayout>
+            </Grid>
         </switch:CustomSwitch.BackgroundContent>
     </switch:CustomSwitch>
 </ContentView>

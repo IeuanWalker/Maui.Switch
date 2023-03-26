@@ -34,7 +34,7 @@ public partial class Other1Switch : ContentView
 
 	void CustomSwitch_SwitchPanUpdate(CustomSwitch customSwitch, SwitchPanUpdatedEventArgs e)
 	{
-		Flex.TranslationX = -(e.TranslateX + e.XRef);
+		KnobContent.TranslationX = -(e.TranslateX + e.XRef);
 
 		Color fromColorLight = e.IsToggled ? Color.FromArgb("#cdf4cc") : Color.FromArgb("#f7cccc");
 		Color toColorLight = e.IsToggled ? Color.FromArgb("#f7cccc") : Color.FromArgb("#cdf4cc");

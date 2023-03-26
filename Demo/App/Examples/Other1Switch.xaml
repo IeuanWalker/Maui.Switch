@@ -20,49 +20,51 @@
             <RoundRectangle CornerRadius="5" />
         </switch:CustomSwitch.StrokeShape>
         <switch:CustomSwitch.BackgroundContent>
-            <FlexLayout JustifyContent="SpaceEvenly">
-                <Label FontAttributes="Bold"
-                       HorizontalOptions="FillAndExpand"
+            <Grid ColumnDefinitions="60,60"
+                  HeightRequest="40"
+                  WidthRequest="120">
+                <Label Grid.Column="0"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
                        HorizontalTextAlignment="Center"
                        Text="OFF"
                        TextColor="DarkGray"
-                       VerticalOptions="FillAndExpand"
-                       VerticalTextAlignment="Center"
-                       WidthRequest="60" />
-                <Label FontAttributes="Bold"
-                       HorizontalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center" />
+                <Label Grid.Column="1"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
                        HorizontalTextAlignment="Center"
                        Text="ON"
                        TextColor="DarkGray"
-                       VerticalOptions="FillAndExpand"
-                       VerticalTextAlignment="Center"
-                       WidthRequest="60" />
-            </FlexLayout>
+                       VerticalTextAlignment="Center" />
+            </Grid>
         </switch:CustomSwitch.BackgroundContent>
 
         <switch:CustomSwitch.KnobContent>
-            <StackLayout Orientation="Horizontal">
-                <FlexLayout x:Name="Flex"
-                            JustifyContent="SpaceEvenly"
-                            WidthRequest="120">
-                    <Label FontAttributes="Bold"
-                           HorizontalOptions="FillAndExpand"
-                           HorizontalTextAlignment="Center"
-                           Text="OFF"
-                           TextColor="#dd2424"
-                           VerticalOptions="FillAndExpand"
-                           VerticalTextAlignment="Center"
-                           WidthRequest="60" />
-                    <Label FontAttributes="Bold"
-                           HorizontalOptions="FillAndExpand"
-                           HorizontalTextAlignment="Center"
-                           Text="ON"
-                           TextColor="#46d744"
-                           VerticalOptions="FillAndExpand"
-                           VerticalTextAlignment="Center"
-                           WidthRequest="60" />
-                </FlexLayout>
-            </StackLayout>
+            <Grid x:Name="KnobContent"
+                  Margin="60,0,0,0"
+                  ColumnDefinitions="60,60"
+                  HeightRequest="40"
+                  WidthRequest="120">
+                <Label Grid.Column="0"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       Text="OFF"
+                       TextColor="#dd2424"
+                       VerticalTextAlignment="Center" />
+                <Label Grid.Column="1"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       Text="ON"
+                       TextColor="#46d744"
+                       VerticalTextAlignment="Center" />
+            </Grid>
         </switch:CustomSwitch.KnobContent>
     </switch:CustomSwitch>
 </ContentView>

@@ -219,6 +219,7 @@ public partial class CustomSwitch : ContentView
 
 	void SwitchLoaded(object sender, EventArgs e)
 	{
+		KnobFrame.Content = KnobContent;
 		if (IsToggled)
 		{
 			GoToRight(100);

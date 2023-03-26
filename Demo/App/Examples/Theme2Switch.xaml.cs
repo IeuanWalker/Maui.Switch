@@ -40,12 +40,17 @@ public partial class Theme2Switch : ContentView
 
 		double t = e.Percentage * 0.01;
 
-		Flex.TranslationX = -(e.TranslateX + e.XRef);
+		KnobContent.TranslationX = -(e.TranslateX + e.XRef);
 		if (e.IsToggled)
 		{
 			if (e.Percentage >= 50)
 			{
 				MoonImg.Opacity = (e.Percentage - 50) * 2 * 0.01;
+				Stars.Opacity = (e.Percentage - 50) * 2 * 0.01;
+			}
+			else
+			{
+				Clouds.Opacity = (100 - (e.Percentage * 2)) * 0.01;
 			}
 		}
 		else
@@ -53,6 +58,11 @@ public partial class Theme2Switch : ContentView
 			if (e.Percentage <= 50)
 			{
 				MoonImg.Opacity = (100 - (e.Percentage * 2)) * 0.01;
+				Stars.Opacity = (100 - (e.Percentage * 2)) * 0.01;
+			}
+			else
+			{
+				Clouds.Opacity = (e.Percentage - 50) * 2 * 0.01;
 			}
 		}
 

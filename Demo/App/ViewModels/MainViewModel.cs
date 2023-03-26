@@ -6,7 +6,7 @@ namespace App.ViewModels;
 [INotifyPropertyChanged]
 public partial class MainViewModel
 {
-	public bool EnableCommands { get; set; } = true;
+	public bool EnableCommands { get; set; }
 	public bool EnableEvents { get; set; }
 
 	[RelayCommand]

@@ -22,14 +22,19 @@
             <RoundRectangle CornerRadius="18" />
         </switch:CustomSwitch.KnobStrokeShape>
         <switch:CustomSwitch.BackgroundContent>
-            <Grid Margin="10,0,10,0" ColumnDefinitions="*,*">
-                <Image Grid.Column="0"
+            <Grid Padding="10,0,10,0"
+                  ColumnDefinitions="40,40"
+                  HeightRequest="40"
+                  WidthRequest="80">
+                <Image x:Name="Clouds"
+                       Grid.Column="0"
                        Aspect="AspectFit"
                        HorizontalOptions="Start"
                        Source="cloud_background"
                        VerticalOptions="Center"
                        WidthRequest="25" />
-                <Image Grid.Column="1"
+                <Image x:Name="Stars"
+                       Grid.Column="1"
                        Aspect="AspectFit"
                        HeightRequest="40"
                        HorizontalOptions="Center"
@@ -38,23 +43,22 @@
             </Grid>
         </switch:CustomSwitch.BackgroundContent>
         <switch:CustomSwitch.KnobContent>
-            <StackLayout Orientation="Horizontal">
-                <FlexLayout x:Name="Flex"
-                            AlignItems="Center"
-                            JustifyContent="SpaceBetween"
-                            WidthRequest="60">
-                    <Image x:Name="MoonImg"
-                           Aspect="AspectFit"
-                           HeightRequest="40"
-                           HorizontalOptions="Center"
-                           Source="moon_surface"
-                           VerticalOptions="Center" />
-                    <Image Aspect="AspectFit"
-                           HeightRequest="40"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center" />
-                </FlexLayout>
-            </StackLayout>
+            <Grid x:Name="KnobContent"
+                  Margin="40,0,0,0"
+                  ColumnDefinitions="40,40"
+                  HeightRequest="36"
+                  WidthRequest="80">
+                <Image x:Name="MoonImg"
+                       Aspect="AspectFit"
+                       HeightRequest="40"
+                       HorizontalOptions="Center"
+                       Source="moon_surface"
+                       VerticalOptions="Center" />
+                <Image Aspect="AspectFit"
+                       HeightRequest="40"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
         </switch:CustomSwitch.KnobContent>
     </switch:CustomSwitch>
 </ContentView>

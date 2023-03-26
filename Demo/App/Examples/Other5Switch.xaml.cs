@@ -31,7 +31,7 @@ public partial class Other5Switch : ContentView
 
 	void CustomSwitch_SwitchPanUpdate(CustomSwitch _, SwitchPanUpdatedEventArgs e)
 	{
-		Flex.TranslationX = -(e.TranslateX + e.XRef);
+		KnobContent.TranslationX = -(e.TranslateX + e.XRef);
 	}
 
 	void CustomSwitch_Toggled(object sender, ToggledEventArgs e)

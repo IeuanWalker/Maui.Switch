@@ -21,23 +21,26 @@
             <RoundRectangle CornerRadius="18" />
         </switch:CustomSwitch.KnobStrokeShape>
         <switch:CustomSwitch.BackgroundContent>
-            <StackLayout Orientation="Horizontal">
-                <Label FontAttributes="Bold"
-                       HorizontalOptions="FillAndExpand"
-                       HorizontalTextAlignment="Center"
+            <Grid ColumnDefinitions="35,35"
+                  HeightRequest="40"
+                  WidthRequest="70">
+                <Label Grid.Column="0"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="12"
+                       HorizontalOptions="Center"
                        Text=" |"
                        TextColor="White"
-                       VerticalOptions="FillAndExpand"
                        VerticalTextAlignment="Center" />
-                <Label FontAttributes="Bold"
+                <Label Grid.Column="1"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
                        FontSize="12"
-                       HorizontalOptions="FillAndExpand"
-                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
                        Text="〇"
                        TextColor="#BBBBBB"
-                       VerticalOptions="FillAndExpand"
                        VerticalTextAlignment="Center" />
-            </StackLayout>
+            </Grid>
         </switch:CustomSwitch.BackgroundContent>
     </switch:CustomSwitch>
 </ContentView>
