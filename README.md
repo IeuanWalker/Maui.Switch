@@ -34,6 +34,7 @@ So essentially, as the knob moves from one side to the other it is just revealin
 ## What can I do with it?
 ### Properties
 > Below table isnt updated, will be updated when version 1.0.0 is released. For now use the [examples](/Demo/App/Examples/) as a reference
+
 | Property | What it does | Extra info |
 |---|---|---- |
 | IsToggled | A `bool` to indicate the togles status of the switch | Default value is **false** |
@@ -47,7 +48,7 @@ So essentially, as the knob moves from one side to the other it is just revealin
 | CornerRadius | A `CornerRadius` object representing each individual corner's radius for the knob. <br> This is property is implemented using XF corner radius object  | More info on how to use this in the [MS docs](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.cornerradius?view=xamarin-forms) <br> Default value is **default(CornerRadius)** |
 | BackgroundColor | The solid color of the switch | Default value is **Color.Default** |
 | Background | The background for the switch, this supports XF brushes to enable gradients, lean more on [MS docs](https://devblogs.microsoft.com/xamarin/xamarinforms-4-8-gradients-brushes/) | Default value is **Brush.Default** |
-| BackgroundContent | Sets the content of the switch.  <br> See [samples](/Sample/Sample/Sample/Examples/) for an  idea how to utilise it  | Default value is **null** |
+| BackgroundContent | Sets the content of the switch.  <br> See [examples](/Demo/App/Examples/) for an  idea how to utilise it  | Default value is **null** |
 | KnobContent | Sets the content of the knob.  <br> See [examples](/Demo/App/Examples/) for an  idea how to utilise it | Default value is **null** |
 | HorizontalKnobMargin | Adds a margin to the max distance the knob can travel | Default value is **0** |
 | KnobLimit | Used to calculate the knob position.  <br> See [examples](/Demo/App/Examples/) for an  idea how to utilise it | Default value is **KnobLimitEnum.Boundary** |
