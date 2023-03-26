@@ -8,6 +8,7 @@
 # Maui.CustomSwitch [![Nuget](https://img.shields.io/nuget/v/IeuanWalker.Maui.Switch)](https://www.nuget.org/packages/IeuanWalker.Maui.Switch) [![Nuget](https://img.shields.io/nuget/dt/IeuanWalker.Maui.Switch)](https://www.nuget.org/packages/IeuanWalker.Maui.Switch) 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Build](https://github.com/IeuanWalker/Maui.Switch/actions/workflows/build.yml/badge.svg)](https://github.com/IeuanWalker/Maui.Switch/actions/workflows/build.yml)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIeuanWalker%2FMaui.Switch.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FIeuanWalker%2FMaui.Switch?ref=badge_shield)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e27a4d0f0b92409283583e65ffc7e10b)](https://app.codacy.com/gh/IeuanWalker/Maui.Switch/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
