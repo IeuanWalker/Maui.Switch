@@ -21,8 +21,8 @@
     <Product>IeuanWalker.Maui.Switch</Product>
     <Copyright>© Ieuan Walker. All rights reserved.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/IeuanWalker/Maui.CustomSwitch</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/IeuanWalker/Maui.CustomSwitch</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/IeuanWalker/Maui.Switch</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/IeuanWalker/Maui.Switch</RepositoryUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
     <DefineConstants>$(DefineConstants);</DefineConstants>
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
