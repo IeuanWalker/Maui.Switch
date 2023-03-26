@@ -23,7 +23,7 @@ Install-Package IeuanWalker.Maui.Switch
 ```
 ____
 
-The best place to learn how to create a new switch is by looking at the [samples](/Demo/App/Examples/).
+The best place to learn how to create a new switch is by looking at the [examples](/Demo/App/Examples/).
 
 These are the key things to know - 
 - `BackgroundContent` is used to set the content of the switch
@@ -33,6 +33,7 @@ So essentially, as the knob moves from one side to the other it is just revealin
 
 ## What can I do with it?
 ### Properties
+> Below table isnt updated, will be updated when version 1.0.0 is released. For now use the [examples](/Demo/App/Examples/) as a reference
 | Property | What it does | Extra info |
 |---|---|---- |
 | IsToggled | A `bool` to indicate the togles status of the switch | Default value is **false** |
@@ -47,16 +48,16 @@ So essentially, as the knob moves from one side to the other it is just revealin
 | BackgroundColor | The solid color of the switch | Default value is **Color.Default** |
 | Background | The background for the switch, this supports XF brushes to enable gradients, lean more on [MS docs](https://devblogs.microsoft.com/xamarin/xamarinforms-4-8-gradients-brushes/) | Default value is **Brush.Default** |
 | BackgroundContent | Sets the content of the switch.  <br> See [samples](/Sample/Sample/Sample/Examples/) for an  idea how to utilise it  | Default value is **null** |
-| KnobContent | Sets the content of the knob.  <br> See [samples](/Sample/Sample/Sample/Examples/) for an  idea how to utilise it | Default value is **null** |
+| KnobContent | Sets the content of the knob.  <br> See [examples](/Demo/App/Examples/) for an  idea how to utilise it | Default value is **null** |
 | HorizontalKnobMargin | Adds a margin to the max distance the knob can travel | Default value is **0** |
-| KnobLimit | Used to calculate the knob position.  <br> See [samples](/Sample/Sample/Sample/Examples/) for an  idea how to utilise it | Default value is **KnobLimitEnum.Boundary** |
+| KnobLimit | Used to calculate the knob position.  <br> See [examples](/Demo/App/Examples/) for an  idea how to utilise it | Default value is **KnobLimitEnum.Boundary** |
 | ToggleAnimationDuration | Used to set the duration of the toggle animation | Default value is **100** <br> To disble the animation set the value to `0` |
 
 ### Events
 | Event | What it does 
 |---|---|
 | Toggled | Triggered when the switch is toggled |
-| SwitchPanUpdate | Triggered when the switch is toggled or dragged. Used to handle the transition of the switch from one side to the other. <br> See [samples](/Demo/App/Examples/) for an  idea how to utilise it | 
+| SwitchPanUpdate | Triggered when the switch is toggled or dragged. Used to handle the transition of the switch from one side to the other. <br> See [examples](/Demo/App/Examples/) for an  idea how to utilise it | 
 
 ### Commands
 | Command | What it does 
