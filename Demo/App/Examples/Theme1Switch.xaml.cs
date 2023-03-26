@@ -1,5 +1,7 @@
 ﻿using System.Windows.Input;
-using CustomSwitch.Helpers;
+using IeuanWalker.Maui.Switch;
+using IeuanWalker.Maui.Switch.Events;
+using IeuanWalker.Maui.Switch.Helpers;
 
 namespace App.Examples;
 
@@ -11,7 +13,9 @@ public partial class Theme1Switch : ContentView
 	}
 
 	public event EventHandler<ToggledEventArgs>? Toggled = null;
+
 	public static readonly BindableProperty IsToggledProperty = BindableProperty.Create(nameof(IsToggled), typeof(bool), typeof(Theme1Switch), false, BindingMode.TwoWay);
+
 	public bool IsToggled
 	{
 		get => (bool)GetValue(IsToggledProperty);
@@ -19,13 +23,14 @@ public partial class Theme1Switch : ContentView
 	}
 
 	public static readonly BindableProperty ToggledCommandProperty = BindableProperty.Create(nameof(ToggledCommand), typeof(ICommand), typeof(Theme1Switch));
+
 	public ICommand ToggledCommand
 	{
 		get => (ICommand)GetValue(ToggledCommandProperty);
 		set => SetValue(ToggledCommandProperty, value);
 	}
 
-	void CustomSwitch_SwitchPanUpdate(object sender, CustomSwitch.Events.SwitchPanUpdatedEventArgs e)
+	void CustomSwitch_SwitchPanUpdate(CustomSwitch customSwitch, SwitchPanUpdatedEventArgs e)
 	{
 		Color fromBackgroundColor = e.IsToggled ? Color.FromArgb("#001f48") : Colors.White;
 		Color toBackgroundColor = e.IsToggled ? Colors.White : Color.FromArgb("#001f48");
@@ -37,7 +42,6 @@ public partial class Theme1Switch : ContentView
 
 		Flex.TranslationX = -(e.TranslateX + e.XRef);
 
-		CustomSwitch.CustomSwitch customSwitch = (CustomSwitch.CustomSwitch)sender;
 		customSwitch.BackgroundColor = ColorAnimationUtil.ColorAnimation(fromBackgroundColor, toBackgroundColor, t);
 		customSwitch.Stroke = ColorAnimationUtil.ColorAnimation(fromBorderColor, toBorderColor, t);
 	}

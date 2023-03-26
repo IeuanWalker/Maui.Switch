@@ -1,10 +1,10 @@
 using System.ComponentModel;
 using System.Windows.Input;
-using CustomSwitch.Enums;
-using CustomSwitch.Events;
+using IeuanWalker.Maui.Switch.Enums;
+using IeuanWalker.Maui.Switch.Events;
 using Microsoft.Maui.Controls.Shapes;
 
-namespace CustomSwitch;
+namespace IeuanWalker.Maui.Switch;
 
 public partial class CustomSwitch : ContentView
 {
@@ -202,7 +202,9 @@ public partial class CustomSwitch : ContentView
 
 	public event EventHandler<ToggledEventArgs>? Toggled;
 
-	public event EventHandler<SwitchPanUpdatedEventArgs>? SwitchPanUpdate;
+	public delegate void CustomSwitchPanUpdatedEventHandler(CustomSwitch customSwitch, SwitchPanUpdatedEventArgs e);
+
+	public event CustomSwitchPanUpdatedEventHandler? SwitchPanUpdate;
 
 	#endregion Events
 

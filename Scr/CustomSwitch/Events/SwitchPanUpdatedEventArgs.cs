@@ -1,6 +1,6 @@
-﻿using CustomSwitch.Enums;
+﻿using IeuanWalker.Maui.Switch.Enums;
 
-namespace CustomSwitch.Events;
+namespace IeuanWalker.Maui.Switch.Events;
 
 public class SwitchPanUpdatedEventArgs : EventArgs
 {

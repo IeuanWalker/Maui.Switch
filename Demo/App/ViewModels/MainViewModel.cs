@@ -7,14 +7,14 @@ namespace App.ViewModels;
 public partial class MainViewModel
 {
 	public bool EnableCommands { get; set; } = true;
-    public bool EnableEvents { get; set; }
+	public bool EnableEvents { get; set; }
 
 	[RelayCommand]
-    public async Task Toggled(bool value)
-    {
-        if (EnableCommands)
-        {
-            await Application.Current!.MainPage!.DisplayAlert("Switch toggled (Command)", $"New value: {value}", "OK").ConfigureAwait(false);
-        }
-    }
+	public async Task Toggled(bool value)
+	{
+		if (EnableCommands)
+		{
+			await Application.Current!.MainPage!.DisplayAlert("Switch toggled (Command)", $"New value: {value}", "OK").ConfigureAwait(false);
+		}
+	}
 }

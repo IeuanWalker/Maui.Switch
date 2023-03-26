@@ -5,6 +5,7 @@ namespace App;
 public partial class MainPage : ContentPage
 {
 	readonly MainViewModel _viewModel;
+
 	public MainPage()
 	{
 		InitializeComponent();
@@ -16,7 +17,7 @@ public partial class MainPage : ContentPage
 	{
 		if (_viewModel.EnableEvents)
 		{
-			await Application.Current!.MainPage!.DisplayAlert("Switch toggled (Event)", $"New value: {e.Value}",  "OK").ConfigureAwait(false);
+			await Application.Current!.MainPage!.DisplayAlert("Switch toggled (Event)", $"New value: {e.Value}", "OK").ConfigureAwait(false);
 		}
 	}
 }

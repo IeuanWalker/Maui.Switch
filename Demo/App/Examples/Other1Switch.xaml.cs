@@ -1,5 +1,7 @@
 ﻿using System.Windows.Input;
-using CustomSwitch.Helpers;
+using IeuanWalker.Maui.Switch;
+using IeuanWalker.Maui.Switch.Events;
+using IeuanWalker.Maui.Switch.Helpers;
 using Microsoft.Maui.Controls.Shapes;
 
 namespace App.Examples;
@@ -13,7 +15,9 @@ public partial class Other1Switch : ContentView
 	}
 
 	public event EventHandler<ToggledEventArgs>? Toggled = null;
+
 	public static readonly BindableProperty IsToggledProperty = BindableProperty.Create(nameof(IsToggled), typeof(bool), typeof(Other1Switch), false, BindingMode.TwoWay);
+
 	public bool IsToggled
 	{
 		get => (bool)GetValue(IsToggledProperty);
@@ -21,13 +25,14 @@ public partial class Other1Switch : ContentView
 	}
 
 	public static readonly BindableProperty ToggledCommandProperty = BindableProperty.Create(nameof(ToggledCommand), typeof(ICommand), typeof(Other1Switch));
+
 	public ICommand ToggledCommand
 	{
 		get => (ICommand)GetValue(ToggledCommandProperty);
 		set => SetValue(ToggledCommandProperty, value);
 	}
 
-	void CustomSwitch_SwitchPanUpdate(object sender, CustomSwitch.Events.SwitchPanUpdatedEventArgs e)
+	void CustomSwitch_SwitchPanUpdate(CustomSwitch customSwitch, SwitchPanUpdatedEventArgs e)
 	{
 		Flex.TranslationX = -(e.TranslateX + e.XRef);
 
@@ -41,8 +46,6 @@ public partial class Other1Switch : ContentView
 
 		double zeroToFive = Calculate(0, 5, t);
 		double fiveToZero = Calculate(5, 0, t);
-
-		CustomSwitch.CustomSwitch customSwitch = (CustomSwitch.CustomSwitch)sender;
 
 		customSwitch.KnobStrokeShape = new RoundRectangle
 		{

@@ -1,4 +1,4 @@
-﻿namespace CustomSwitch.Enums;
+﻿namespace IeuanWalker.Maui.Switch.Enums;
 
 public enum KnobLimitEnum
 {

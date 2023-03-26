@@ -13,12 +13,12 @@
 
   <PropertyGroup>
     <GitInfoReportImportance>high</GitInfoReportImportance>
-    <PackageId>IeuanWalker.Maui.CustomSwitch</PackageId>
+    <PackageId>IeuanWalker.Maui.Switch</PackageId>
     <Summary>A control that allows you to design any type of switch/ toggle for .NET MAUI. It's also 100% accessible.</Summary>
     <Authors>Ieuan Walker</Authors>
     <Owners>Ieuan Walker</Owners>
     <NeutralLanguage>en</NeutralLanguage>
-    <Product>IeuanWalker.Maui.CustomSwitch</Product>
+    <Product>IeuanWalker.Maui.Switch</Product>
     <Copyright>© Ieuan Walker. All rights reserved.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/IeuanWalker/Maui.CustomSwitch</PackageProjectUrl>
@@ -44,6 +44,10 @@
   </PropertyGroup>
 
   <Import Project="MultiTargeting.targets" />
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <MauiXaml Update="CustomSwitch.xaml">

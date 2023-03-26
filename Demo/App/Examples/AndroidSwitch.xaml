@@ -3,7 +3,7 @@
 <ContentView x:Class="App.Examples.AndroidSwitch"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:switch="clr-namespace:CustomSwitch;assembly=CustomSwitch">
+             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
     <switch:CustomSwitch BackgroundColor="#A6A6A6"
                          HeightRequest="20"
                          HorizontalOptions="Center"

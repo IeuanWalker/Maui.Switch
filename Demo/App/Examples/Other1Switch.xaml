@@ -2,7 +2,7 @@
 <ContentView x:Class="App.Examples.Other1Switch"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:switch="clr-namespace:CustomSwitch;assembly=CustomSwitch">
+             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
     <switch:CustomSwitch BackgroundColor="White"
                          HeightRequest="40"
                          IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"

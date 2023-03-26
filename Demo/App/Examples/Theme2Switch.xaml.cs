@@ -1,5 +1,7 @@
 ﻿using System.Windows.Input;
-using CustomSwitch.Helpers;
+using IeuanWalker.Maui.Switch;
+using IeuanWalker.Maui.Switch.Events;
+using IeuanWalker.Maui.Switch.Helpers;
 
 namespace App.Examples;
 
@@ -11,7 +13,9 @@ public partial class Theme2Switch : ContentView
 	}
 
 	public event EventHandler<ToggledEventArgs>? Toggled = null;
+
 	public static readonly BindableProperty IsToggledProperty = BindableProperty.Create(nameof(IsToggled), typeof(bool), typeof(Theme2Switch), false, BindingMode.TwoWay);
+
 	public bool IsToggled
 	{
 		get => (bool)GetValue(IsToggledProperty);
@@ -19,13 +23,14 @@ public partial class Theme2Switch : ContentView
 	}
 
 	public static readonly BindableProperty ToggledCommandProperty = BindableProperty.Create(nameof(ToggledCommand), typeof(ICommand), typeof(Theme2Switch));
+
 	public ICommand ToggledCommand
 	{
 		get => (ICommand)GetValue(ToggledCommandProperty);
 		set => SetValue(ToggledCommandProperty, value);
 	}
 
-	void CustomSwitch_SwitchPanUpdate(object sender, CustomSwitch.Events.SwitchPanUpdatedEventArgs e)
+	void CustomSwitch_SwitchPanUpdate(CustomSwitch customSwitch, SwitchPanUpdatedEventArgs e)
 	{
 		Color fromColorGradient1 = e.IsToggled ? Color.FromArgb("#16d4f4") : Color.FromArgb("#4a467e");
 		Color toColorGradient1 = e.IsToggled ? Color.FromArgb("#4a467e") : Color.FromArgb("#16d4f4");
@@ -51,7 +56,6 @@ public partial class Theme2Switch : ContentView
 			}
 		}
 
-		CustomSwitch.CustomSwitch customSwitch = (CustomSwitch.CustomSwitch)sender;
 		customSwitch.Background = new LinearGradientBrush(new GradientStopCollection
 		{
 			new GradientStop
@@ -66,6 +70,7 @@ public partial class Theme2Switch : ContentView
 			}
 		});
 	}
+
 	void CustomSwitch_Toggled(object sender, ToggledEventArgs e)
 	{
 		Toggled?.Invoke(sender, e);
