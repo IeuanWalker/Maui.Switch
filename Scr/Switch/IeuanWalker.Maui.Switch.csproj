@@ -43,10 +43,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <Import Project="MultiTargeting.targets" />
-
   <ItemGroup>
-    <PackageReference Include="System.Runtime" Version="4.3.1" />
+    <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,4 +52,6 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
   </ItemGroup>
+
+  <Import Project="MultiTargeting.targets" />
 </Project>
