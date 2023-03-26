@@ -10,7 +10,7 @@ on:
     
 env:
   NET_VERSION: 7.0.101
-  PROJECT_PATH: 'Scr/IeuanWalker.Maui.Switch.csproj'
+  PROJECT_PATH: 'Scr/Switch/IeuanWalker.Maui.Switch.csproj'
   NUGET_PATH: './**/IeuanWalker.Maui.Switch.1.0.0.nupkg'
 
 jobs:
