@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Handlers;
+﻿using System.Diagnostics;
+using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
 
 namespace CustomSwitch.Handler;
@@ -34,7 +35,15 @@ public partial class SwitchViewHandler : ViewHandler<SwitchView, ContentViewGrou
 
 		if (handler.VirtualView is IView view)
 		{
-			handler.PlatformView.AddView(view.ToPlatform(handler.MauiContext));
+			try
+			{
+				handler.PlatformView.AddView(view.ToPlatform(handler.MauiContext));
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.ToString());
+				throw;
+			}
 		}
 	}
 
