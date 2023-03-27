@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace CustomSwitch.Handler;
+﻿namespace CustomSwitch.Handler;
 
 [ContentProperty("Content")]
 public class SwitchView : TemplatedView
@@ -20,6 +18,4 @@ public class SwitchView : TemplatedView
 		get { return (View)GetValue(ContentProperty); }
 		set { SetValue(ContentProperty, value); }
 	}
-
-
 }
