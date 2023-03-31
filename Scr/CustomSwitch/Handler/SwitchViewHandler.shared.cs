@@ -4,10 +4,10 @@ namespace CustomSwitch.Handler;
 public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 {
 	public static new IPropertyMapper<IContentView, ISwitchViewHandler> Mapper =
-				new PropertyMapper<IContentView, ISwitchViewHandler>(ContentViewHandler.Mapper)
-				{
-					[nameof(ISwitchView.IsToggled)] = MapIsToggled
-				};
+		new PropertyMapper<IContentView, ISwitchViewHandler>(ContentViewHandler.Mapper)
+		{
+			[nameof(ISwitchView.IsToggled)] = MapIsToggled
+		};
 
 	public static new CommandMapper<IContentView, ISwitchViewHandler> CommandMapper =
 		new(ContentViewHandler.CommandMapper);
