@@ -1,9 +1,5 @@
 ﻿namespace CustomSwitch;
-public interface ISwitchView : IView, IPadding
+public interface ISwitchView
 {
 	bool IsToggled { get; set; }
-	/// <summary>
-	/// Gets the raw content of this view.
-	/// </summary>
-	object? Content { get; }
 }
