@@ -16,5 +16,4 @@ public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 			}
 		}
 	}
-
 }
