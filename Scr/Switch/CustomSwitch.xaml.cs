@@ -204,9 +204,36 @@ public partial class CustomSwitch : SwitchView
 	{
 		InitializeComponent();
 
+		this.PropertyChanged += CustomSwitchPropertyChanged;
+
 		CurrentState = IsToggled ? SwitchStateEnum.Right : SwitchStateEnum.Left;
 
 		KnobFrame.SetBinding(ContentProperty, new Binding(nameof(KnobContent)) { Source = this, Mode = BindingMode.TwoWay });
+	}
+
+	void CustomSwitchPropertyChanged(object? sender, PropertyChangedEventArgs e)
+	{
+		if (!e.PropertyName?.Equals(nameof(IsToggled)) ?? true)
+		{
+			return;
+		}
+
+		if (sender is not CustomSwitch view)
+		{
+			return;
+		}
+
+		if (view.IsToggled && view.CurrentState != SwitchStateEnum.Right)
+		{
+			view.GoToRight();
+		}
+		else if (!view.IsToggled && view.CurrentState != SwitchStateEnum.Left)
+		{
+			view.GoToLeft();
+		}
+
+		view.Toggled?.Invoke(view, new ToggledEventArgs(view.IsToggled));
+		view.ToggledCommand?.Execute(view.IsToggled);
 	}
 
 	void SwitchLoaded(object sender, EventArgs e)
@@ -220,26 +247,6 @@ public partial class CustomSwitch : SwitchView
 		{
 			GoToLeft(100);
 		}
-	}
-
-	static void IsToggledChanged(BindableObject bindable, object oldValue, object newValue)
-	{
-		if (bindable is not CustomSwitch view)
-		{
-			return;
-		}
-
-		if ((bool)newValue && view.CurrentState != SwitchStateEnum.Right)
-		{
-			view.GoToRight();
-		}
-		else if (!(bool)newValue && view.CurrentState != SwitchStateEnum.Left)
-		{
-			view.GoToLeft();
-		}
-
-		view.Toggled?.Invoke(view, new ToggledEventArgs((bool)newValue));
-		view.ToggledCommand?.Execute((bool)newValue);
 	}
 
 	void GoToLeft(double percentage = 0.0)

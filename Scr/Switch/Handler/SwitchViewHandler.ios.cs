@@ -3,7 +3,7 @@ using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
 using UIKit;
 
-namespace CustomSwitch.Handler;
+namespace IeuanWalker.Maui.Switch.Handler;
 public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 {
 	public static void MapIsToggled(ISwitchViewHandler handler, IContentView page)

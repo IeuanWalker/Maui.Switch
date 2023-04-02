@@ -1,4 +1,4 @@
-﻿using CustomSwitch;
+﻿using IeuanWalker.Maui.Switch;
 
 namespace App;
 

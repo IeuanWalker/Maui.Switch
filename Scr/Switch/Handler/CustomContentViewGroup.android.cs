@@ -5,7 +5,7 @@ using Java.Lang;
 using Microsoft.Maui.Platform;
 using String = Java.Lang.String;
 
-namespace CustomSwitch.Handler;
+namespace IeuanWalker.Maui.Switch.Handler;
 public class CustomContentViewGroup : ContentViewGroup
 {
 	readonly Android.Widget.Switch _a11YSwitch;
@@ -16,6 +16,8 @@ public class CustomContentViewGroup : ContentViewGroup
 
 		_switchView = (ISwitchView)virtualView;
 		_a11YSwitch.Checked = _switchView.IsToggled;
+
+		Focusable = true;
 
 	}
 

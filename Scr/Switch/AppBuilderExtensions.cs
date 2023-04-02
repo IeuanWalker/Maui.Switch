@@ -1,6 +1,6 @@
-﻿using CustomSwitch.Handler;
+﻿using IeuanWalker.Maui.Switch.Handler;
 
-namespace CustomSwitch;
+namespace IeuanWalker.Maui.Switch;
 /// <summary>
 /// This class contains CustomSwitch <see cref="MauiAppBuilder"/> extensions.
 /// </summary>

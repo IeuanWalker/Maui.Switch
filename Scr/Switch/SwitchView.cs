@@ -1,4 +1,4 @@
-﻿namespace CustomSwitch.Handler;
+﻿namespace IeuanWalker.Maui.Switch;
 
 public class SwitchView : ContentView, ISwitchView
 {

@@ -44,6 +44,9 @@
                                         IsToggled="{Binding EnableCommands}" />
                 </Grid>
 
+                <Button Text="Test" />
+                <Switch />
+
                 <Label Style="{StaticResource sectionHeading}" Text="iOS" />
                 <examples:IosSwitch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />
                 <examples:IosSwitch IsToggled="True"
