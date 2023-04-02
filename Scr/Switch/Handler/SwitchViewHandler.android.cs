@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using Android.Media.Midi;
-using Microsoft.Maui.Handlers;
+﻿using Microsoft.Maui.Handlers;
 
 namespace IeuanWalker.Maui.Switch.Handler;
 public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
@@ -12,7 +10,7 @@ public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 			throw new InvalidOperationException($"{nameof(VirtualView)} must be set to create a ContentViewGroup");
 		}
 
-		var viewGroup = new CustomContentViewGroup(Context, this.VirtualView);
+		var viewGroup = new CustomContentViewGroup(Context, VirtualView);
 		viewGroup.SetClipChildren(false);
 
 		return viewGroup;

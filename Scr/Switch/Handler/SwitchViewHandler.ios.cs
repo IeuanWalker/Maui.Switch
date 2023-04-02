@@ -1,19 +1,17 @@
-﻿using System.Diagnostics;
-using Microsoft.Maui.Handlers;
-using Microsoft.Maui.Platform;
-using UIKit;
+﻿using Microsoft.Maui.Handlers;
 
 namespace IeuanWalker.Maui.Switch.Handler;
 public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 {
-	public static void MapIsToggled(ISwitchViewHandler handler, IContentView page)
+	protected override CustomContentView CreatePlatformView()
 	{
-		if (handler is ISwitchViewHandler invh && invh.ContainerView != null)
+		return new CustomContentView();
+	}
+	public static void MapIsToggled(ISwitchViewHandler handler, IContentView contentView)
+	{
+		if (handler.PlatformView is CustomContentView platformView && contentView is ISwitchView switchView)
 		{
-			if (page is ISwitchView switchView)
-			{
-				Debug.WriteLine(switchView.IsToggled);
-			}
+			platformView.SetIsToggled(switchView.IsToggled);
 		}
 	}
 }

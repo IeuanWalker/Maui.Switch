@@ -4,27 +4,24 @@ using Android.Views;
 using Java.Lang;
 using Microsoft.Maui.Platform;
 using String = Java.Lang.String;
+using Android.Content;
 
 namespace IeuanWalker.Maui.Switch.Handler;
 public class CustomContentViewGroup : ContentViewGroup
 {
 	readonly Android.Widget.Switch _a11YSwitch;
 	readonly ISwitchView _switchView;
-	public CustomContentViewGroup(Android.Content.Context context, IContentView virtualView) : base(context)
+	public CustomContentViewGroup(Context context, IContentView virtualView) : base(context)
 	{
 		_a11YSwitch = new Android.Widget.Switch(context);
 
 		_switchView = (ISwitchView)virtualView;
 		_a11YSwitch.Checked = _switchView.IsToggled;
 
+		//! important - this is what makes the switch accessible via keyboard navigation
 		Focusable = true;
-
 	}
 
-	/// <summary>
-	/// Triggered when `IsToggled` is changed
-	/// </summary>
-	/// <param name="isToggled"></param>
 	public void SetIsToggled(bool isToggled)
 	{
 		if (_a11YSwitch.Checked != isToggled)
@@ -34,10 +31,8 @@ public class CustomContentViewGroup : ContentViewGroup
 		}
 	}
 
-	/// <inheritdoc />
 	public override ICharSequence? AccessibilityClassNameFormatted => new String(_a11YSwitch.Class.Name);
 
-	/// <inheritdoc />
 	public override void OnInitializeAccessibilityNodeInfo(AccessibilityNodeInfo? info)
 	{
 		if (info is not null)

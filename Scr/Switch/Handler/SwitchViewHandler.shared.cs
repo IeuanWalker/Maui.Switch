@@ -1,6 +1,7 @@
 ﻿using Microsoft.Maui.Handlers;
 
 namespace IeuanWalker.Maui.Switch.Handler;
+
 public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 {
 	public static new IPropertyMapper<IContentView, ISwitchViewHandler> Mapper =
@@ -26,7 +27,6 @@ public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 	{
 	}
 }
-
 
 public interface ISwitchViewHandler : IContentViewHandler
 {

@@ -204,7 +204,7 @@ public partial class CustomSwitch : SwitchView
 	{
 		InitializeComponent();
 
-		this.PropertyChanged += CustomSwitchPropertyChanged;
+		PropertyChanged += CustomSwitchPropertyChanged;
 
 		CurrentState = IsToggled ? SwitchStateEnum.Right : SwitchStateEnum.Left;
 
