@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<view:SwitchView x:Class="CustomSwitch.CustomSwitch"
+                 xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:view="clr-namespace:CustomSwitch.Handler">
+    <view:SwitchView.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+    </view:SwitchView.GestureRecognizers>
+    <view:SwitchView.Content>
+        <Grid>
+            <Border x:Name="BackgroundFrame"
+                    Padding="0"
+                    Background="{Binding Background, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    BackgroundColor="{Binding BackgroundColor, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    Content="{Binding BackgroundContent, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HeightRequest="{Binding HeightRequest, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HorizontalOptions="Center"
+                    Stroke="{Binding Stroke, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    StrokeShape="{Binding StrokeShape, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    StrokeThickness="{Binding StrokeThickness, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    VerticalOptions="Center"
+                    WidthRequest="{Binding WidthRequest, Source={RelativeSource AncestorType={x:Type ContentView}}}">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
+                </Border.GestureRecognizers>
+            </Border>
+            <Border x:Name="KnobFrame"
+                    Padding="0"
+                    Background="{Binding KnobBackground, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    BackgroundColor="{Binding KnobColor, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    Content="{Binding KnobContent, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HeightRequest="{Binding KnobHeight, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HorizontalOptions="Center"
+                    Loaded="SwitchLoaded"
+                    Stroke="{Binding KnobStroke, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    StrokeShape="{Binding KnobStrokeShape, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    StrokeThickness="{Binding KnobStrokeThickness, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    VerticalOptions="Center"
+                    WidthRequest="{Binding KnobWidth, Source={RelativeSource AncestorType={x:Type ContentView}}}" />
+        </Grid>
+    </view:SwitchView.Content>
+</view:SwitchView>

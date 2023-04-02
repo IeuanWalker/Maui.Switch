@@ -2,7 +2,6 @@
 <ContentPage x:Class="App.MainPage"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:customSwitch="clr-namespace:CustomSwitch;assembly=CustomSwitch"
              xmlns:examples="clr-namespace:App.Examples;assembly=App"
              xmlns:viewModel="clr-namespace:App.ViewModels;assembly=App"
              x:DataType="viewModel:MainViewModel"
@@ -44,8 +43,6 @@
                                         Grid.Column="1"
                                         IsToggled="{Binding EnableCommands}" />
                 </Grid>
-
-
 
                 <Label Style="{StaticResource sectionHeading}" Text="iOS" />
                 <examples:IosSwitch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />

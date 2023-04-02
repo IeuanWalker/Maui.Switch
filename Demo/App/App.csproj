@@ -57,7 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Scr\CustomSwitch\CustomSwitch.csproj" />
+	  <ProjectReference Include="..\..\Scr\Switch\IeuanWalker.Maui.Switch.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

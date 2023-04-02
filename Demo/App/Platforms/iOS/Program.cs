@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace App;
+namespace App.Platforms.iOS;
 public class Program
 {
 	// This is the main entry point of the application.
