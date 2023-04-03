@@ -9,6 +9,8 @@ public class CustomContentView : ContentView
 	public void SetIsToggled(bool isToggled)
 	{
 		_a11YSwitch.On = isToggled;
+
+		IsAccessibilityElement = true;
 	}
 
 	public override string? AccessibilityValue
