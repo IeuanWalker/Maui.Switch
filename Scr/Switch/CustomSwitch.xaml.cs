@@ -6,7 +6,7 @@ using Microsoft.Maui.Controls.Shapes;
 
 namespace IeuanWalker.Maui.Switch;
 
-public partial class CustomSwitch : ContentView
+public partial class CustomSwitch : SwitchView
 {
 	#region Properties
 
@@ -14,14 +14,6 @@ public partial class CustomSwitch : ContentView
 	SwitchStateEnum CurrentState { get; set; }
 
 	double _xRef;
-
-	public static readonly BindableProperty IsToggledProperty = BindableProperty.Create(nameof(IsToggled), typeof(bool), typeof(CustomSwitch), false, BindingMode.TwoWay, propertyChanged: IsToggledChanged);
-
-	public bool IsToggled
-	{
-		get => (bool)GetValue(IsToggledProperty);
-		set => SetValue(IsToggledProperty, value);
-	}
 
 	public static readonly BindableProperty ToggleAnimationDurationProperty = BindableProperty.Create(nameof(ToggleAnimationDuration), typeof(int), typeof(CustomSwitch), 100);
 
@@ -212,9 +204,34 @@ public partial class CustomSwitch : ContentView
 	{
 		InitializeComponent();
 
-		CurrentState = IsToggled ? SwitchStateEnum.Right : SwitchStateEnum.Left;
+		PropertyChanged += CustomSwitchPropertyChanged;
 
-		KnobFrame.SetBinding(ContentProperty, new Binding(nameof(KnobContent)) { Source = this, Mode = BindingMode.TwoWay });
+		CurrentState = IsToggled ? SwitchStateEnum.Right : SwitchStateEnum.Left;
+	}
+
+	void CustomSwitchPropertyChanged(object? sender, PropertyChangedEventArgs e)
+	{
+		if (!e.PropertyName?.Equals(nameof(IsToggled)) ?? true)
+		{
+			return;
+		}
+
+		if (sender is not CustomSwitch view)
+		{
+			return;
+		}
+
+		if (view.IsToggled && view.CurrentState != SwitchStateEnum.Right)
+		{
+			view.GoToRight();
+		}
+		else if (!view.IsToggled && view.CurrentState != SwitchStateEnum.Left)
+		{
+			view.GoToLeft();
+		}
+
+		view.Toggled?.Invoke(view, new ToggledEventArgs(view.IsToggled));
+		view.ToggledCommand?.Execute(view.IsToggled);
 	}
 
 	void SwitchLoaded(object sender, EventArgs e)
@@ -228,26 +245,6 @@ public partial class CustomSwitch : ContentView
 		{
 			GoToLeft(100);
 		}
-	}
-
-	static void IsToggledChanged(BindableObject bindable, object oldValue, object newValue)
-	{
-		if (bindable is not CustomSwitch view)
-		{
-			return;
-		}
-
-		if ((bool)newValue && view.CurrentState != SwitchStateEnum.Right)
-		{
-			view.GoToRight();
-		}
-		else if (!(bool)newValue && view.CurrentState != SwitchStateEnum.Left)
-		{
-			view.GoToLeft();
-		}
-
-		view.Toggled?.Invoke(view, new ToggledEventArgs((bool)newValue));
-		view.ToggledCommand?.Execute((bool)newValue);
 	}
 
 	void GoToLeft(double percentage = 0.0)

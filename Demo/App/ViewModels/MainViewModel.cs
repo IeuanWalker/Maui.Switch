@@ -3,8 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace App.ViewModels;
 
-[INotifyPropertyChanged]
-public partial class MainViewModel
+public partial class MainViewModel : ObservableObject
 {
 	public bool EnableCommands { get; set; }
 	public bool EnableEvents { get; set; }
