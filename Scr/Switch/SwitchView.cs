@@ -1,4 +1,6 @@
-﻿namespace IeuanWalker.Maui.Switch;
+﻿using IeuanWalker.Maui.Switch.Interfaces;
+
+namespace IeuanWalker.Maui.Switch;
 
 public class SwitchView : ContentView, ISwitchView
 {

@@ -207,8 +207,6 @@ public partial class CustomSwitch : SwitchView
 		PropertyChanged += CustomSwitchPropertyChanged;
 
 		CurrentState = IsToggled ? SwitchStateEnum.Right : SwitchStateEnum.Left;
-
-		KnobFrame.SetBinding(ContentProperty, new Binding(nameof(KnobContent)) { Source = this, Mode = BindingMode.TwoWay });
 	}
 
 	void CustomSwitchPropertyChanged(object? sender, PropertyChangedEventArgs e)

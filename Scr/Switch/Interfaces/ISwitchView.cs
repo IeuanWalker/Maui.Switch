@@ -1,4 +1,4 @@
-﻿namespace IeuanWalker.Maui.Switch;
+﻿namespace IeuanWalker.Maui.Switch.Interfaces;
 
 public interface ISwitchView
 {

@@ -1,7 +1,7 @@
 ﻿using UIKit;
 using ContentView = Microsoft.Maui.Platform.ContentView;
 
-namespace IeuanWalker.Maui.Switch.Handler;
+namespace IeuanWalker.Maui.Switch.Platform;
 public class CustomContentView : ContentView
 {
 	readonly UISwitch _a11YSwitch = new();
