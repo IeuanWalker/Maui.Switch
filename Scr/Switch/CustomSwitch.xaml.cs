@@ -178,21 +178,7 @@ public partial class CustomSwitch : SwitchView
 
 	#endregion Properties
 
-	#region Commands
-
-	public static readonly BindableProperty ToggledCommandProperty = BindableProperty.Create(nameof(ToggledCommand), typeof(ICommand), typeof(CustomSwitch));
-
-	public ICommand ToggledCommand
-	{
-		get => (ICommand)GetValue(ToggledCommandProperty);
-		set => SetValue(ToggledCommandProperty, value);
-	}
-
-	#endregion Commands
-
 	#region Events
-
-	public event EventHandler<ToggledEventArgs>? Toggled;
 
 	public delegate void CustomSwitchPanUpdatedEventHandler(CustomSwitch customSwitch, SwitchPanUpdatedEventArgs e);
 
@@ -230,8 +216,7 @@ public partial class CustomSwitch : SwitchView
 			view.GoToLeft();
 		}
 
-		view.Toggled?.Invoke(view, new ToggledEventArgs(view.IsToggled));
-		view.ToggledCommand?.Execute(view.IsToggled);
+		InvokeToggled();
 	}
 
 	void SwitchLoaded(object sender, EventArgs e)
