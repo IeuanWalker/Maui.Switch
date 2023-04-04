@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="App.Pages.SwitchViewPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App.Controls;assembly=App"
+             xmlns:examples="clr-namespace:App.Controls.CustomSwitchExamples;assembly=App"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModel="clr-namespace:App.ViewModels;assembly=App"
+             Title="Switch View Page"
+             x:DataType="viewModel:SwitchViewModel"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
+            <controls:BackButton />
+
+            <Border Padding="10"
+                    Stroke="LightGray"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="4">
+
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Label FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="Options" />
+                    </toolkit:Expander.Header>
+                    <Grid Margin="20"
+                          ColumnDefinitions="*,auto,auto"
+                          RowDefinitions="auto,auto"
+                          RowSpacing="10">
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Enable toggle events: "
+                               TextColor="DarkGray"
+                               VerticalTextAlignment="Center" />
+                        <examples:IosSwitch Grid.Row="0"
+                                            Grid.Column="1"
+                                            IsToggled="{Binding EnableEvents}" />
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Enable toggle commands: "
+                               TextColor="DarkGray"
+                               VerticalTextAlignment="Center" />
+                        <examples:IosSwitch Grid.Row="1"
+                                            Grid.Column="1"
+                                            IsToggled="{Binding EnableCommands}" />
+                    </Grid>
+                </toolkit:Expander>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -2,7 +2,7 @@
 using IeuanWalker.Maui.Switch;
 using IeuanWalker.Maui.Switch.Events;
 
-namespace App.Examples;
+namespace App.Controls.CustomSwitchExamples;
 
 public partial class Other5Switch : ContentView
 {

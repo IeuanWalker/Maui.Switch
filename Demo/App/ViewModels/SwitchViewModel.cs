@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace App.ViewModels;
 
-public partial class MainViewModel : ObservableObject
+public partial class SwitchViewModel : ObservableObject
 {
 	public bool EnableCommands { get; set; }
 	public bool EnableEvents { get; set; }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="App.Pages.AccessiblityTestPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App.Controls;assembly=App"
+             xmlns:examples="clr-namespace:App.Controls.CustomSwitchExamples;assembly=App"
+             Title="Accessiblity Test Page"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
+            <controls:BackButton />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

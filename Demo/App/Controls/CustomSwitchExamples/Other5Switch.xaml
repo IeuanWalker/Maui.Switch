@@ -1,62 +1,62 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentView x:Class="App.Examples.Theme2Switch"
+<ContentView x:Class="App.Controls.CustomSwitchExamples.Other5Switch"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
     <switch:CustomSwitch BackgroundColor="White"
-                         HeightRequest="40"
-                         HorizontalKnobMargin="2"
+                         HeightRequest="50"
                          IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                         KnobColor="White"
-                         KnobHeight="36"
+                         KnobColor="DeepPink"
+                         KnobHeight="60"
                          KnobLimit="Boundary"
-                         KnobWidth="36"
+                         KnobWidth="60"
                          SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
                          Toggled="CustomSwitch_Toggled"
                          ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                         WidthRequest="80">
+                         WidthRequest="120">
         <switch:CustomSwitch.StrokeShape>
-            <RoundRectangle CornerRadius="20" />
+            <RoundRectangle CornerRadius="25" />
         </switch:CustomSwitch.StrokeShape>
         <switch:CustomSwitch.KnobStrokeShape>
-            <RoundRectangle CornerRadius="18" />
+            <RoundRectangle CornerRadius="30" />
         </switch:CustomSwitch.KnobStrokeShape>
         <switch:CustomSwitch.BackgroundContent>
-            <Grid Padding="10,0,10,0"
-                  ColumnDefinitions="40,40"
-                  HeightRequest="40"
-                  WidthRequest="80">
-                <Image x:Name="Clouds"
-                       Grid.Column="0"
+            <Grid Margin="15,0,15,0"
+                  ColumnDefinitions="60,60"
+                  HeightRequest="50"
+                  WidthRequest="120">
+                <Image Grid.Column="0"
                        Aspect="AspectFit"
-                       HorizontalOptions="Start"
-                       Source="cloud_background"
-                       VerticalOptions="Center"
-                       WidthRequest="25" />
-                <Image x:Name="Stars"
-                       Grid.Column="1"
-                       Aspect="AspectFit"
-                       HeightRequest="40"
+                       HeightRequest="30"
                        HorizontalOptions="Center"
-                       Source="star_background"
+                       Source="android_black"
+                       VerticalOptions="Center" />
+                <Image Grid.Column="1"
+                       Aspect="AspectFit"
+                       HeightRequest="30"
+                       HorizontalOptions="Center"
+                       Source="apple_black"
                        VerticalOptions="Center" />
             </Grid>
         </switch:CustomSwitch.BackgroundContent>
+
         <switch:CustomSwitch.KnobContent>
             <Grid x:Name="KnobContent"
-                  Margin="40,0,0,0"
-                  ColumnDefinitions="40,40"
-                  HeightRequest="36"
-                  WidthRequest="80">
-                <Image x:Name="MoonImg"
+                  Margin="60,0,0,0"
+                  ColumnDefinitions="60,60"
+                  HeightRequest="50"
+                  WidthRequest="120">
+                <Image Grid.Column="0"
                        Aspect="AspectFit"
-                       HeightRequest="40"
+                       HeightRequest="30"
                        HorizontalOptions="Center"
-                       Source="moon_surface"
+                       Source="android_gray"
                        VerticalOptions="Center" />
-                <Image Aspect="AspectFit"
-                       HeightRequest="40"
+                <Image Grid.Column="1"
+                       Aspect="AspectFit"
+                       HeightRequest="30"
                        HorizontalOptions="Center"
+                       Source="apple_gray"
                        VerticalOptions="Center" />
             </Grid>
         </switch:CustomSwitch.KnobContent>

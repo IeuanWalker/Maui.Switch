@@ -1,23 +1,26 @@
-﻿using App.ViewModels;
+﻿using App.Pages;
 
 namespace App;
 
 public partial class MainPage : ContentPage
 {
-	readonly MainViewModel _viewModel;
-
 	public MainPage()
 	{
 		InitializeComponent();
-
-		BindingContext = _viewModel = new MainViewModel();
 	}
 
-	async void Switch_OnToggled(object sender, ToggledEventArgs e)
+	async void CustomSwitchBtn_Clicked(object sender, EventArgs e)
 	{
-		if (_viewModel.EnableEvents)
-		{
-			await Application.Current!.MainPage!.DisplayAlert("Switch toggled (Event)", $"New value: {e.Value}", "OK").ConfigureAwait(false);
-		}
+		await Navigation.PushAsync(new CustomSwitchPage());
+	}
+
+	async void SwitchViewBtn_Clicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new SwitchViewPage());
+	}
+
+	async void AccessibilityBtn_Clicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new AccessiblityTestPage());
 	}
 }

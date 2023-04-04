@@ -3,7 +3,7 @@ using IeuanWalker.Maui.Switch;
 using IeuanWalker.Maui.Switch.Events;
 using IeuanWalker.Maui.Switch.Helpers;
 
-namespace App.Examples;
+namespace App.Controls.CustomSwitchExamples;
 
 public partial class Other3Switch : ContentView
 {

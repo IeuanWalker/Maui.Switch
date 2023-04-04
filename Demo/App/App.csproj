@@ -58,7 +58,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+	  <PackageReference Include="IeuanWalker.Maui.StateButton" Version="1.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -66,33 +68,58 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Examples\AndroidSwitch.xaml">
+	  <Compile Update="Controls\BackButton.xaml.cs">
+	    <DependentUpon>BackButton.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Controls\BackButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\IosSwitch.xaml">
+	  <MauiXaml Update="Controls\CustomButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\Other1Switch.xaml">
+	  <MauiXaml Update="Controls\CustomSwitchExamples\AndroidSwitch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\Other2Switch.xaml">
+	  <MauiXaml Update="Controls\CustomSwitchExamples\IosSwitch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\Other3Switch.xaml">
+	  <MauiXaml Update="Controls\CustomSwitchExamples\Other1Switch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\Other4Switch.xaml">
+	  <MauiXaml Update="Controls\CustomSwitchExamples\Other2Switch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\Other5Switch.xaml">
+	  <MauiXaml Update="Controls\CustomSwitchExamples\Other3Switch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\Theme1Switch.xaml">
+	  <MauiXaml Update="Controls\CustomSwitchExamples\Other4Switch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Examples\Theme2Switch.xaml">
+	  <MauiXaml Update="Controls\CustomSwitchExamples\Other5Switch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Controls\CustomSwitchExamples\Theme1Switch.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\CustomSwitchExamples\Theme2Switch.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\AccessiblityTestPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\CustomSwitchPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\SwitchViewPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Examples\" />
 	</ItemGroup>
 
 </Project>

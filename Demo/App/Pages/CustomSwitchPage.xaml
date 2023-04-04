@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="App.Pages.CustomSwitchPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App.Controls;assembly=App"
+             xmlns:examples="clr-namespace:App.Controls.CustomSwitchExamples;assembly=App"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModel="clr-namespace:App.ViewModels;assembly=App"
+             Title="Custom Switch Page"
+             x:DataType="viewModel:SwitchViewModel"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
+            <controls:BackButton />
+
+            <Border Padding="10"
+                    Stroke="LightGray"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="4">
+
+                <toolkit:Expander>
+                    <toolkit:Expander.Header>
+                        <Label FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="Options" />
+                    </toolkit:Expander.Header>
+                    <Grid Margin="20"
+                          ColumnDefinitions="*,auto,auto"
+                          RowDefinitions="auto,auto"
+                          RowSpacing="10">
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Enable toggle events: "
+                               TextColor="DarkGray"
+                               VerticalTextAlignment="Center" />
+                        <examples:IosSwitch Grid.Row="0"
+                                            Grid.Column="1"
+                                            IsToggled="{Binding EnableEvents}" />
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Enable toggle commands: "
+                               TextColor="DarkGray"
+                               VerticalTextAlignment="Center" />
+                        <examples:IosSwitch Grid.Row="1"
+                                            Grid.Column="1"
+                                            IsToggled="{Binding EnableCommands}" />
+                    </Grid>
+                </toolkit:Expander>
+            </Border>
+
+
+            <Label Style="{StaticResource sectionHeading}" Text="iOS" />
+            <examples:IosSwitch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />
+            <examples:IosSwitch IsToggled="True"
+                                Toggled="Switch_OnToggled"
+                                ToggledCommand="{Binding ToggledCommand}" />
+
+            <Border Style="{StaticResource divider}" />
+            <Label Style="{StaticResource sectionHeading}" Text="Android" />
+            <examples:AndroidSwitch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />
+            <examples:AndroidSwitch IsToggled="True"
+                                    Toggled="Switch_OnToggled"
+                                    ToggledCommand="{Binding ToggledCommand}" />
+
+            <Border Style="{StaticResource divider}" />
+            <Label Style="{StaticResource sectionHeading}" Text="Theme" />
+            <examples:Theme1Switch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Theme1Switch IsToggled="True"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Theme2Switch Margin="0,30,0,0"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Theme2Switch IsToggled="True"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+
+            <Border Style="{StaticResource divider}" />
+            <Label Style="{StaticResource sectionHeading}" Text="Others" />
+            <examples:Other1Switch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Other1Switch IsToggled="True"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Other2Switch Margin="0,30,0,0"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Other2Switch IsToggled="True"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Other3Switch Margin="0,30,0,0"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Other3Switch IsToggled="True"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <VerticalStackLayout Padding="20"
+                                 BackgroundColor="White"
+                                 HorizontalOptions="FillAndExpand">
+                <examples:Other4Switch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />
+                <examples:Other4Switch IsToggled="True"
+                                       Toggled="Switch_OnToggled"
+                                       ToggledCommand="{Binding ToggledCommand}" />
+            </VerticalStackLayout>
+            <examples:Other5Switch Margin="0,30,0,0"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+            <examples:Other5Switch IsToggled="True"
+                                   Toggled="Switch_OnToggled"
+                                   ToggledCommand="{Binding ToggledCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

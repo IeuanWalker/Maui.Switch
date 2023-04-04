@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentView x:Class="App.Examples.IosSwitch"
+<ContentView x:Class="App.Controls.CustomSwitchExamples.Other2Switch"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
-    <switch:CustomSwitch HeightRequest="40"
-                         HorizontalKnobMargin="1"
+    <switch:CustomSwitch BackgroundColor="White"
+                         HeightRequest="40"
+                         HorizontalKnobMargin="3"
                          IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                         KnobColor="White"
+                         KnobColor="Red"
                          KnobHeight="36"
                          KnobLimit="Boundary"
                          KnobWidth="36"
                          SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
                          Toggled="CustomSwitch_Toggled"
                          ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                         WidthRequest="70">
+                         WidthRequest="80">
         <switch:CustomSwitch.StrokeShape>
             <RoundRectangle CornerRadius="20" />
         </switch:CustomSwitch.StrokeShape>
@@ -21,24 +22,24 @@
             <RoundRectangle CornerRadius="18" />
         </switch:CustomSwitch.KnobStrokeShape>
         <switch:CustomSwitch.BackgroundContent>
-            <Grid ColumnDefinitions="35,35"
+            <Grid ColumnDefinitions="40,40"
                   HeightRequest="40"
-                  WidthRequest="70">
+                  WidthRequest="80">
                 <Label Grid.Column="0"
                        FontAttributes="Bold"
                        FontAutoScalingEnabled="False"
                        FontSize="12"
                        HorizontalOptions="Center"
-                       Text=" |"
-                       TextColor="White"
+                       Text="ON"
+                       TextColor="DarkGray"
                        VerticalTextAlignment="Center" />
                 <Label Grid.Column="1"
                        FontAttributes="Bold"
                        FontAutoScalingEnabled="False"
                        FontSize="12"
                        HorizontalOptions="Center"
-                       Text="〇"
-                       TextColor="#BBBBBB"
+                       Text="OFF"
+                       TextColor="DarkGray"
                        VerticalTextAlignment="Center" />
             </Grid>
         </switch:CustomSwitch.BackgroundContent>

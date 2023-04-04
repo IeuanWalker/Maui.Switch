@@ -4,7 +4,7 @@ using IeuanWalker.Maui.Switch.Events;
 using IeuanWalker.Maui.Switch.Helpers;
 using Microsoft.Maui.Controls.Shapes;
 
-namespace App.Examples;
+namespace App.Controls.CustomSwitchExamples;
 
 [XamlCompilation(XamlCompilationOptions.Compile)]
 public partial class Other1Switch : ContentView
