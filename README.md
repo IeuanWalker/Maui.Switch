@@ -11,7 +11,7 @@
 This is a switch/ toggle control that would allow you to create any style switch you'd like. <br>
 This component is built on top/ from this great libary - https://github.com/Phenek/Global.InputForms. Fixes a few issues, adds more options for styling and improved accessibility.
 
-Take a look at the sample app included within this project - 
+Take a look at the demo app included within this project - 
 
 ![Sample App](Doc/SampleApp.gif)
 
@@ -50,8 +50,6 @@ Check the wiki guide for how to use them, and to view the examples -
 Both iOS and android see's this control as a native switch. So from an accessibility POV it behaves like a native switch.
 
 To make the switch even for accessible set the [`SemanticProperties.Hint`](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility?view=net-maui-7.0#hint) property on the control
-
-
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIeuanWalker%2FMaui.Switch.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FIeuanWalker%2FMaui.Switch?ref=badge_large)
