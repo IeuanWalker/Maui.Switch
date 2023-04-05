@@ -47,7 +47,7 @@ Check the wiki guide for how to use them, and to view the examples -
 ## 3. Accessibility
 Both iOS and android see's this control as a native switch. So from an accessibility POV it behaves like a native switch.
 
-To make the switch even for accessible set the [`SemanticProperties.Hint`](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility?view=net-maui-7.0#hint) property on the control
+To make the switch even more accessible set the [`SemanticProperties.Hint`](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility?view=net-maui-7.0#hint) property on the control, to let the user know what the switch is for.
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIeuanWalker%2FMaui.Switch.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FIeuanWalker%2FMaui.Switch?ref=badge_large)
