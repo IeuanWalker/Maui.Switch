@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<view:SwitchView x:Class="App.Controls.SwitchViewExamples.BorderSwitch"
+                 xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:view="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
+    <view:SwitchView.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+    </view:SwitchView.GestureRecognizers>
+    <Border x:Name="SwitchBackground"
+            Padding="16,8"
+            Background="#2B0B98"
+            HorizontalOptions="Center"
+            Loaded="SwitchBackground_Loaded"
+            MinimumWidthRequest="100"
+            StrokeThickness="4">
+        <Label x:Name="SwitchText"
+               FontAttributes="Bold"
+               FontSize="18"
+               HorizontalTextAlignment="Center"
+               TextColor="White" />
+    </Border>
+</view:SwitchView>

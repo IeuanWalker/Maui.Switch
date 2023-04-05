@@ -55,12 +55,14 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\FA-Solid-900.otf" />
+	  <None Remove="Resources\Raw\lottieSwitch1.json" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 	  <PackageReference Include="IeuanWalker.Maui.StateButton" Version="1.0.1" />
+	  <PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.61" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -107,6 +109,12 @@
 	  <MauiXaml Update="Controls\CustomSwitchExamples\Theme2Switch.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Controls\SwitchViewExamples\BorderSwitch.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\SwitchViewExamples\ImageSwitch.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\AccessiblityTestPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -116,10 +124,6 @@
 	  <MauiXaml Update="Pages\SwitchViewPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Examples\" />
 	</ItemGroup>
 
 </Project>

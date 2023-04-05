@@ -9,6 +9,21 @@
     <ScrollView>
         <VerticalStackLayout>
             <controls:BackButton />
+
+            <Label Style="{StaticResource sectionHeading}" Text="Standard switch" />
+            <Switch HorizontalOptions="Center" />
+            <Switch HorizontalOptions="Center" IsToggled="True" />
+            <examples:IosSwitch />
+            <examples:IosSwitch IsToggled="True" />
+            <Border Style="{StaticResource divider}" />
+
+            <Label Style="{StaticResource sectionHeading}" Text="With hint" />
+            <Switch HorizontalOptions="Center" SemanticProperties.Hint="Would you like to be contacted?" />
+            <Switch HorizontalOptions="Center"
+                    IsToggled="True"
+                    SemanticProperties.Hint="Would you like to be contacted?" />
+            <examples:IosSwitch AccessibilityHint="Would you like to be contacted?" />
+            <examples:IosSwitch AccessibilityHint="Would you like to be contacted?" IsToggled="True" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

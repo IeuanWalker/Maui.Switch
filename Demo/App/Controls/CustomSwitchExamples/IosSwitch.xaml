@@ -10,6 +10,7 @@
                          KnobHeight="36"
                          KnobLimit="Boundary"
                          KnobWidth="36"
+                         SemanticProperties.Hint="{Binding AccessibilityHint, Source={RelativeSource AncestorType={x:Type ContentView}}}"
                          SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
                          Toggled="CustomSwitch_Toggled"
                          ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
