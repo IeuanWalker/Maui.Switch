@@ -19,7 +19,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				fonts.AddFont("FA-Solid-900.otf", "FASolid900");
 			})
-			.UseCustomSwitch()
+			.UseSwitch()
 			.UseSkiaSharp()
 			.ConfigureStateButton();
 

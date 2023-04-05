@@ -6,9 +6,8 @@
              HorizontalOptions="Start">
     <ContentView.ControlTemplate>
         <ControlTemplate>
-            <stateButton:StateButton Margin="15"
-                                     Padding="20,20"
-                                     BackgroundColor="LightGray"
+            <stateButton:StateButton Margin="0,0,0,20"
+                                     BackgroundColor="{DynamicResource SecondaryColour}"
                                      Clicked="StateButton_Clicked"
                                      HeightRequest="40"
                                      WidthRequest="40">
@@ -17,14 +16,10 @@
                 </stateButton:StateButton.StrokeShape>
                 <stateButton:StateButton.Triggers>
                     <Trigger TargetType="stateButton:StateButton" Property="State" Value="Pressed">
-                        <Setter Property="BackgroundColor" Value="DarkGray" />
+                        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryDarkColour}" />
                     </Trigger>
                 </stateButton:StateButton.Triggers>
-                <Label FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       Text="-"
-                       TextColor="White"
-                       VerticalTextAlignment="Center" />
+                <Image Source="https://icons.veryicon.com/png/o/miscellaneous/eva-icon-fill/arrow-back-8.png" WidthRequest="28" />
             </stateButton:StateButton>
         </ControlTemplate>
     </ContentView.ControlTemplate>

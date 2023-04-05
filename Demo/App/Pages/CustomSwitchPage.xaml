@@ -7,22 +7,15 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModel="clr-namespace:App.ViewModels;assembly=App"
              Title="Custom Switch Page"
-             x:DataType="viewModel:SwitchViewModel"
-             Shell.NavBarIsVisible="False">
-    <ScrollView>
+             x:DataType="viewModel:SwitchViewModel">
+    <ScrollView Padding="{StaticResource PagePadding}">
         <VerticalStackLayout>
             <controls:BackButton />
 
-            <Border Padding="10"
-                    Stroke="LightGray"
-                    StrokeShape="RoundRectangle 10"
-                    StrokeThickness="4">
-
+            <Border Style="{StaticResource expander}">
                 <toolkit:Expander>
                     <toolkit:Expander.Header>
-                        <Label FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="Options" />
+                        <Label Style="{StaticResource expanderHeader}" Text="Options" />
                     </toolkit:Expander.Header>
                     <Grid Margin="20"
                           ColumnDefinitions="*,auto,auto"
@@ -31,7 +24,7 @@
                         <Label Grid.Row="0"
                                Grid.Column="0"
                                Text="Enable toggle events: "
-                               TextColor="DarkGray"
+                               TextColor="{DynamicResource TextPrimaryColour}"
                                VerticalTextAlignment="Center" />
                         <examples:IosSwitch Grid.Row="0"
                                             Grid.Column="1"
@@ -39,7 +32,7 @@
                         <Label Grid.Row="1"
                                Grid.Column="0"
                                Text="Enable toggle commands: "
-                               TextColor="DarkGray"
+                               TextColor="{DynamicResource TextPrimaryColour}"
                                VerticalTextAlignment="Center" />
                         <examples:IosSwitch Grid.Row="1"
                                             Grid.Column="1"

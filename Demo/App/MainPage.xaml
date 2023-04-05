@@ -3,13 +3,9 @@
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:App.Controls;assembly=App"
-             BackgroundColor="#f7f7f7"
-             Shell.NavBarIsVisible="false">
-    <ContentPage.Resources />
+             Padding="{StaticResource PagePadding}">
     <ContentPage.Content>
-        <VerticalStackLayout Margin="20"
-                             Spacing="20"
-                             VerticalOptions="Center">
+        <VerticalStackLayout Spacing="20" VerticalOptions="Center">
             <controls:CustomButton Clicked="CustomSwitchBtn_Clicked" Text="CustomSwitch examples" />
             <controls:CustomButton Clicked="SwitchViewBtn_Clicked" Text="SwitchView examples" />
             <controls:CustomButton Clicked="AccessibilityBtn_Clicked" Text="Accessiblity tests" />

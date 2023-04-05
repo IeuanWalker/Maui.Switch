@@ -1,14 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="BackgroundColour">#FFFFFF</Color>
+    <Color x:Key="SecondaryColour">#F8F8FA</Color>
+    <Color x:Key="SecondaryDarkColour">#DFDFE1</Color>
+    <Color x:Key="TextPrimaryColour">DarkGray</Color>
+
+
+    <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColour}" />
+        <Setter Property="Shell.NavBarIsVisible" Value="False" />
+    </Style>
+
+    <OnPlatform x:Key="PagePadding"
+                x:TypeArguments="Thickness"
+                Default="20" />
+
     <Style x:Key="divider" TargetType="Border">
         <Setter Property="Margin" Value="0,10" />
-        <Setter Property="BackgroundColor" Value="#EBECEC" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColour}" />
         <Setter Property="HeightRequest" Value="1" />
     </Style>
     <Style x:Key="sectionHeading" TargetType="Label">
         <Setter Property="Padding" Value="5" />
         <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-        <Setter Property="TextColor" Value="DarkGray" />
+        <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColour}" />
+    </Style>
+
+    <Style x:Key="expander" TargetType="Border">
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColour}" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 10" />
+    </Style>
+    <Style x:Key="expanderHeader" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColour}" />
     </Style>
 </ResourceDictionary>
