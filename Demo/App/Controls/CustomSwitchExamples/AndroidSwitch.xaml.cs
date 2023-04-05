@@ -47,7 +47,7 @@ public partial class AndroidSwitch : ContentView
 
 		double t = e.Percentage * 0.01;
 
-		customSwitch.KnobColor = ColorAnimationUtil.ColorAnimation(fromSwitchColor, toSwitchColor, t);
+		customSwitch.KnobBackgroundColor = ColorAnimationUtil.ColorAnimation(fromSwitchColor, toSwitchColor, t);
 		customSwitch.BackgroundColor = ColorAnimationUtil.ColorAnimation(fromColor, toColor, t);
 	}
 }

@@ -53,7 +53,7 @@ public partial class Other1Switch : ContentView
 				new CornerRadius(zeroToFive, fiveToZero, zeroToFive, fiveToZero) :
 				new CornerRadius(fiveToZero, zeroToFive, fiveToZero, zeroToFive)
 		};
-		customSwitch.KnobColor = ColorAnimationUtil.ColorAnimation(fromColorLight, toColorLight, t);
+		customSwitch.KnobBackgroundColor = ColorAnimationUtil.ColorAnimation(fromColorLight, toColorLight, t);
 		customSwitch.KnobStroke = ColorAnimationUtil.ColorAnimation(fromColorDark, toColorDark, t);
 	}
 

@@ -117,12 +117,12 @@ public partial class CustomSwitch : SwitchView
 		set => SetValue(KnobBackgroundProperty, value);
 	}
 
-	public static readonly BindableProperty KnobColorProperty = BindableProperty.Create(nameof(KnobColor), typeof(Color), typeof(CustomSwitch), Colors.Transparent);
+	public static readonly BindableProperty KnobBackgroundColorProperty = BindableProperty.Create(nameof(KnobBackgroundColor), typeof(Color), typeof(CustomSwitch), Colors.Transparent);
 
-	public Color KnobColor
+	public Color KnobBackgroundColor
 	{
-		get => (Color)GetValue(KnobColorProperty);
-		set => SetValue(KnobColorProperty, value);
+		get => (Color)GetValue(KnobBackgroundColorProperty);
+		set => SetValue(KnobBackgroundColorProperty, value);
 	}
 
 	public static readonly BindableProperty KnobStrokeShapeProperty = BindableProperty.Create(nameof(KnobStrokeShape), typeof(IShape), typeof(CustomSwitch), new Rectangle());

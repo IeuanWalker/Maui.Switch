@@ -8,7 +8,7 @@
                          HeightRequest="20"
                          HorizontalOptions="Center"
                          IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                         KnobColor="#fafafa"
+                         KnobBackgroundColor="#fafafa"
                          KnobHeight="34"
                          KnobLimit="Max"
                          KnobWidth="34"
