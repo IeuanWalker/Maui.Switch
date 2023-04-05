@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using System.Windows.Input;
 using IeuanWalker.Maui.Switch.Enums;
 using IeuanWalker.Maui.Switch.Events;
 using Microsoft.Maui.Controls.Shapes;
@@ -190,46 +189,35 @@ public partial class CustomSwitch : SwitchView
 	{
 		InitializeComponent();
 
-		PropertyChanged += CustomSwitchPropertyChanged;
-
 		CurrentState = IsToggled ? SwitchStateEnum.Right : SwitchStateEnum.Left;
+
+		Loaded += (sender, args) =>
+		{
+			if (IsToggled)
+			{
+				GoToRight(100);
+			}
+			else
+			{
+				GoToLeft(100);
+			}
+		};
 	}
 
-	void CustomSwitchPropertyChanged(object? sender, PropertyChangedEventArgs e)
+	protected override void IsToggledChanged()
 	{
-		if (!e.PropertyName?.Equals(nameof(IsToggled)) ?? true)
+		if (IsToggled && CurrentState != SwitchStateEnum.Right)
 		{
-			return;
+			GoToRight();
 		}
-
-		if (sender is not CustomSwitch view)
+		else if (!IsToggled && CurrentState != SwitchStateEnum.Left)
 		{
-			return;
-		}
-
-		if (view.IsToggled && view.CurrentState != SwitchStateEnum.Right)
-		{
-			view.GoToRight();
-		}
-		else if (!view.IsToggled && view.CurrentState != SwitchStateEnum.Left)
-		{
-			view.GoToLeft();
+			GoToLeft();
 		}
 
 		InvokeToggled();
-	}
 
-	void SwitchLoaded(object sender, EventArgs e)
-	{
-		KnobFrame.Content = KnobContent;
-		if (IsToggled)
-		{
-			GoToRight(100);
-		}
-		else
-		{
-			GoToLeft(100);
-		}
+		base.IsToggledChanged();
 	}
 
 	void GoToLeft(double percentage = 0.0)
@@ -306,15 +294,7 @@ public partial class CustomSwitch : SwitchView
 
 	void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 	{
-		SendSwitchPanUpdatedEventArgs(PanStatusEnum.Started);
-		if (CurrentState == SwitchStateEnum.Right)
-		{
-			GoToLeft();
-		}
-		else
-		{
-			GoToRight();
-		}
+		IsToggled = !IsToggled;
 	}
 
 	double _tmpTotalX;
@@ -326,10 +306,6 @@ public partial class CustomSwitch : SwitchView
 
 		switch (e.StatusType)
 		{
-			case GestureStatus.Started:
-				SendSwitchPanUpdatedEventArgs(PanStatusEnum.Started);
-				break;
-
 			case GestureStatus.Running:
 				KnobFrame.TranslationX = Math.Min(_xRef, Math.Max(-_xRef, KnobFrame.TranslationX + dragX));
 				_tmpTotalX = e.TotalX;

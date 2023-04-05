@@ -8,18 +8,21 @@ public partial class BorderSwitch : SwitchView
 	public BorderSwitch()
 	{
 		InitializeComponent();
-	}
 
-	void SwitchBackground_Loaded(object sender, EventArgs e)
-	{
-		StyleSwitch();
+		Loaded += (sender, args) => StyleSwitch();
 	}
 
 	void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
 	{
 		IsToggled = !IsToggled;
-		InvokeToggled();
+	}
+
+	protected override void IsToggledChanged()
+	{
+		base.IsToggledChanged();
+
 		StyleSwitch();
+		InvokeToggled();
 	}
 
 	void StyleSwitch()

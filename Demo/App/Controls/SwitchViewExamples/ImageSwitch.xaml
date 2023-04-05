@@ -8,6 +8,5 @@
     </view:SwitchView.GestureRecognizers>
     <Image x:Name="SwitchImage"
            HeightRequest="50"
-           Loaded="SwitchImage_Loaded"
            WidthRequest="50" />
 </view:SwitchView>

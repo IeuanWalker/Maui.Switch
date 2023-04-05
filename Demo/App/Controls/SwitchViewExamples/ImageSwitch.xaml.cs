@@ -7,18 +7,18 @@ public partial class ImageSwitch : SwitchView
 	public ImageSwitch()
 	{
 		InitializeComponent();
-	}
 
-	void SwitchImage_Loaded(object sender, EventArgs e)
-	{
-		StyleSwitch();
+		Loaded += (sender, args) => StyleSwitch();
 	}
-
 	void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
 	{
 		IsToggled = !IsToggled;
-		InvokeToggled();
+	}
+
+	protected override void IsToggledChanged()
+	{
 		StyleSwitch();
+		InvokeToggled();
 	}
 
 	void StyleSwitch()

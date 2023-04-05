@@ -10,7 +10,6 @@
             Padding="16,8"
             Background="#2B0B98"
             HorizontalOptions="Center"
-            Loaded="SwitchBackground_Loaded"
             MinimumWidthRequest="100"
             StrokeThickness="4">
         <Label x:Name="SwitchText"

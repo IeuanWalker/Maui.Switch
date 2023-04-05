@@ -2,7 +2,6 @@
 
 public enum PanStatusEnum
 {
-	Started,
 	Running,
 	Completed,
 	Canceled

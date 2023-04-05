@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Diagnostics;
+using System.Windows.Input;
 using IeuanWalker.Maui.Switch.Interfaces;
 
 namespace IeuanWalker.Maui.Switch;
@@ -21,6 +22,18 @@ public class SwitchView : ContentView, ISwitchView
 
 	public event EventHandler<ToggledEventArgs>? Toggled;
 
+
+	public SwitchView()
+	{
+		PropertyChanged += (sender, args) =>
+		{
+			if (args.PropertyName?.Equals(nameof(IsToggled)) ?? false)
+			{
+				IsToggledChanged();
+			}
+		};
+	}
+
 	/// <summary>
 	/// Invokes and executes the Toggled event and command.
 	/// </summary>
@@ -28,5 +41,10 @@ public class SwitchView : ContentView, ISwitchView
 	{
 		Toggled?.Invoke(this, new ToggledEventArgs(IsToggled));
 		ToggledCommand?.Execute(IsToggled);
+	}
+
+	protected virtual void IsToggledChanged()
+	{
+		Debug.WriteLine($"{nameof(IsToggled)} changed from {!IsToggled} to {IsToggled}");
 	}
 }
