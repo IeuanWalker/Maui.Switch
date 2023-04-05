@@ -11,7 +11,9 @@
 This is a switch/ toggle control that would allow you to create any style switch you'd like. <br>
 This component is built on top/ from this great libary - https://github.com/Phenek/Global.InputForms. Fixes a few issues, adds more options for styling and improved accessibility.
 
-Take a look at the sample app included within this project
+Take a look at the sample app included within this project - 
+
+![Sample App](Doc/SampleApp.gif)
 
 ## 1. How to use it?
 Install the [NuGet package](https://www.nuget.org/packages/IeuanWalker.Maui.Switch) into your shared project project
