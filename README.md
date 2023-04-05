@@ -1,7 +1,7 @@
 | :memo:        | This is a MAUI version of my [Xamarin NuGet](https://github.com/IeuanWalker?tab=repositories&q=switch&type=&language=&sort=)      |
 |---------------|:------------------------|
 
-# Maui.CustomSwitch [![Nuget](https://img.shields.io/nuget/v/IeuanWalker.Maui.Switch)](https://www.nuget.org/packages/IeuanWalker.Maui.Switch) [![Nuget](https://img.shields.io/nuget/dt/IeuanWalker.Maui.Switch)](https://www.nuget.org/packages/IeuanWalker.Maui.Switch) 
+# Maui.Switch [![Nuget](https://img.shields.io/nuget/v/IeuanWalker.Maui.Switch)](https://www.nuget.org/packages/IeuanWalker.Maui.Switch) [![Nuget](https://img.shields.io/nuget/dt/IeuanWalker.Maui.Switch)](https://www.nuget.org/packages/IeuanWalker.Maui.Switch) 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build](https://github.com/IeuanWalker/Maui.Switch/actions/workflows/build.yml/badge.svg)](https://github.com/IeuanWalker/Maui.Switch/actions/workflows/build.yml)
@@ -32,8 +32,6 @@ builder
     .UseMauiApp<App>()
     .UseSwitch()
 ```
-
-
 
 ## 2. Choose a control
 This control contains 2 seperate controls, `CustomSwitch` and `SwitchView`.
