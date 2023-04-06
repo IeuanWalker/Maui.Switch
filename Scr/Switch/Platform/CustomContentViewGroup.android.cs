@@ -21,7 +21,6 @@ public class CustomContentViewGroup : ContentViewGroup
 
 		//! important - this is what makes the switch accessible via keyboard navigation
 		Focusable = true;
-		Clickable = true;
 	}
 
 	public void SetIsToggled(bool isToggled)
