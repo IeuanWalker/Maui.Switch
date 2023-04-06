@@ -21,6 +21,7 @@ public class CustomContentViewGroup : ContentViewGroup
 
 		//! important - this is what makes the switch accessible via keyboard navigation
 		Focusable = true;
+		Clickable = true;
 	}
 
 	public void SetIsToggled(bool isToggled)
@@ -38,6 +39,7 @@ public class CustomContentViewGroup : ContentViewGroup
 	{
 		if (info is not null)
 		{
+			info.Focusable = true;
 			info.Checkable = true;
 			info.Checked = _a11YSwitch.Checked;
 			info.Text = GetStateDescription();
