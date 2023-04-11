@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using IeuanWalker.Maui.Switch;
-using StateButton;
 using SkiaSharp.Views.Maui.Controls.Hosting;
+using IeuanWalker.Maui.StateButton;
 
 namespace App;
 
@@ -21,7 +21,7 @@ public static class MauiProgram
 			})
 			.UseSwitch()
 			.UseSkiaSharp()
-			.ConfigureStateButton();
+			.UseStateButton();
 
 		return builder.Build();
 	}
