@@ -9,7 +9,6 @@ public partial class PanGestureTestPage : ContentPage
 	public PanGestureTestPage()
 	{
 		InitializeComponent();
-
 	}
 
 	static void CustomSwitch_SwitchPanUpdate(CustomSwitch customSwitch, SwitchPanUpdatedEventArgs e)

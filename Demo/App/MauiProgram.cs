@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Maui;
+using IeuanWalker.Maui.StateButton;
 using IeuanWalker.Maui.Switch;
 using SkiaSharp.Views.Maui.Controls.Hosting;
-using IeuanWalker.Maui.StateButton;
 
 namespace App;
 

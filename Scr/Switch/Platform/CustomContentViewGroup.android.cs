@@ -1,9 +1,9 @@
 ﻿using Android.Content;
 using Android.Views.Accessibility;
+using IeuanWalker.Maui.Switch.Interfaces;
 using Java.Lang;
 using Microsoft.Maui.Platform;
 using String = Java.Lang.String;
-using IeuanWalker.Maui.Switch.Interfaces;
 
 namespace IeuanWalker.Maui.Switch.Platform;
 public class CustomContentViewGroup : ContentViewGroup

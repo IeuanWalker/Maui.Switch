@@ -10,7 +10,7 @@ public partial class CustomSwitch : SwitchView
 	#region Properties
 
 	// General properties
-	SwitchStateEnum CurrentState { get; set; }
+	private SwitchStateEnum CurrentState { get; set; }
 
 	double _xRef;
 
