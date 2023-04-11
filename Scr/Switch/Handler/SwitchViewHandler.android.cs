@@ -19,7 +19,7 @@ public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 	{
 		if (handler.PlatformView is CustomContentViewGroup platformView && contentView is ISwitchView switchView)
 		{
-			platformView.SetIsToggled(switchView.IsToggled);
+			platformView.SetIsToggled();
 		}
 	}
 }
