@@ -41,7 +41,6 @@
                 </toolkit:Expander>
             </Border>
 
-
             <Label Style="{StaticResource sectionHeading}" Text="iOS" />
             <examples:IosSwitch Toggled="Switch_OnToggled" ToggledCommand="{Binding ToggledCommand}" />
             <examples:IosSwitch IsToggled="True"

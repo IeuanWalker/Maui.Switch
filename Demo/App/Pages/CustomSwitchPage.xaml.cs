@@ -5,6 +5,7 @@ namespace App.Pages;
 public partial class CustomSwitchPage : ContentPage
 {
 	readonly SwitchViewModel _viewModel;
+
 	public CustomSwitchPage()
 	{
 		InitializeComponent();

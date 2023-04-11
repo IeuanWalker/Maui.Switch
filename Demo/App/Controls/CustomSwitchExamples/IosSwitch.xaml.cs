@@ -21,13 +21,14 @@ public partial class IosSwitch : ContentView
 		get => (bool)GetValue(IsToggledProperty);
 		set => SetValue(IsToggledProperty, value);
 	}
+
 	public static readonly BindableProperty AccessibilityHintProperty = BindableProperty.Create(nameof(AccessibilityHint), typeof(string), typeof(IosSwitch), string.Empty);
+
 	public string AccessibilityHint
 	{
 		get => (string)GetValue(AccessibilityHintProperty);
 		set => SetValue(AccessibilityHintProperty, value);
 	}
-
 
 	public static readonly BindableProperty ToggledCommandProperty = BindableProperty.Create(nameof(ToggledCommand), typeof(ICommand), typeof(IosSwitch));
 

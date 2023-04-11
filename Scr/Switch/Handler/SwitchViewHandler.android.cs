@@ -1,6 +1,5 @@
-﻿using Microsoft.Maui.Handlers;
-using IeuanWalker.Maui.Switch.Interfaces;
-using IeuanWalker.Maui.Switch.Platform;
+﻿using IeuanWalker.Maui.Switch.Platform;
+using Microsoft.Maui.Handlers;
 
 namespace IeuanWalker.Maui.Switch.Handler;
 public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
@@ -14,12 +13,5 @@ public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
 		viewGroup.SetClipChildren(false);
 
 		return viewGroup;
-	}
-	public static void MapIsToggled(ISwitchViewHandler handler, IContentView contentView)
-	{
-		if (handler.PlatformView is CustomContentViewGroup platformView && contentView is ISwitchView switchView)
-		{
-			platformView.SetIsToggled(switchView.IsToggled);
-		}
 	}
 }

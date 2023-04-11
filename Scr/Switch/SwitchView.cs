@@ -7,6 +7,7 @@ namespace IeuanWalker.Maui.Switch;
 public class SwitchView : ContentView, ISwitchView
 {
 	public static readonly BindableProperty IsToggledProperty = BindableProperty.Create(nameof(IsToggled), typeof(bool), typeof(SwitchView), false, BindingMode.TwoWay);
+
 	public bool IsToggled
 	{
 		get => (bool)GetValue(IsToggledProperty);
@@ -14,6 +15,7 @@ public class SwitchView : ContentView, ISwitchView
 	}
 
 	public static readonly BindableProperty ToggledCommandProperty = BindableProperty.Create(nameof(ToggledCommand), typeof(ICommand), typeof(SwitchView));
+
 	public ICommand ToggledCommand
 	{
 		get => (ICommand)GetValue(ToggledCommandProperty);
@@ -21,7 +23,6 @@ public class SwitchView : ContentView, ISwitchView
 	}
 
 	public event EventHandler<ToggledEventArgs>? Toggled;
-
 
 	public SwitchView()
 	{

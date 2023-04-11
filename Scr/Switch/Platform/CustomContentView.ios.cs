@@ -1,31 +1,27 @@
-﻿using UIKit;
+﻿using IeuanWalker.Maui.Switch.Interfaces;
+using UIKit;
 using ContentView = Microsoft.Maui.Platform.ContentView;
 
 namespace IeuanWalker.Maui.Switch.Platform;
 public class CustomContentView : ContentView
 {
-	readonly UISwitch _a11YSwitch = new();
-
-	public void SetIsToggled(bool isToggled)
+	readonly UIAccessibilityTrait _switchUIAccessibilityTrait;
+	readonly ISwitchView _switchView;
+	public CustomContentView(IContentView virtualView)
 	{
-		_a11YSwitch.On = isToggled;
+		_switchView = (ISwitchView)virtualView;
+		_switchUIAccessibilityTrait = new UISwitch().AccessibilityTraits;
 
 		IsAccessibilityElement = true;
 	}
 
 	public override string? AccessibilityValue
 	{
-		get => _a11YSwitch.AccessibilityValue;
+		get => _switchView.IsToggled ? "1" : "0";
 	}
 
 	public override UIAccessibilityTrait AccessibilityTraits
 	{
-		get => _a11YSwitch.AccessibilityTraits;
-	}
-
-	public override bool AccessibilityActivate()
-	{
-		_a11YSwitch.SetState(!_a11YSwitch.On, false);
-		return base.AccessibilityActivate();
+		get => _switchUIAccessibilityTrait;
 	}
 }

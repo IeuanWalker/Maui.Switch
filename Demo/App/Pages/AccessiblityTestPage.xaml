@@ -6,7 +6,7 @@
              xmlns:examples="clr-namespace:App.Controls.CustomSwitchExamples;assembly=App"
              Title="Accessiblity Test Page">
     <ScrollView Padding="{StaticResource PagePadding}">
-        <VerticalStackLayout>
+        <VerticalStackLayout BackgroundColor="Transparent" MinimumHeightRequest="1000">
             <controls:BackButton />
 
             <Label Style="{StaticResource sectionHeading}" Text="Standard switch" />

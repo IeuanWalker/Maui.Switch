@@ -10,6 +10,7 @@ public partial class ImageSwitch : SwitchView
 
 		Loaded += (sender, args) => StyleSwitch();
 	}
+
 	void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
 	{
 		IsToggled = !IsToggled;

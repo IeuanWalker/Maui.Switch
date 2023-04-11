@@ -7,7 +7,6 @@
     <Color x:Key="SecondaryDarkColour">#DFDFE1</Color>
     <Color x:Key="TextPrimaryColour">DarkGray</Color>
 
-
     <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
         <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColour}" />
         <Setter Property="Shell.NavBarIsVisible" Value="False" />
