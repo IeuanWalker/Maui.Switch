@@ -10,7 +10,8 @@ public partial class CustomSwitch : SwitchView
 	#region Properties
 
 	// General properties
-	private SwitchStateEnum CurrentState { get; set; }
+	SwitchStateEnum CurrentState { get; set; }
+	bool HasLoaded { get; set; }
 
 	double _xRef;
 
@@ -201,7 +202,11 @@ public partial class CustomSwitch : SwitchView
 			{
 				GoToLeft(100);
 			}
+
+			HasLoaded = true;
 		};
+
+		
 	}
 
 	protected override void IsToggledChanged()
@@ -215,7 +220,10 @@ public partial class CustomSwitch : SwitchView
 			GoToLeft();
 		}
 
-		InvokeToggled();
+		if (HasLoaded)
+		{
+			InvokeToggled();
+		}
 
 		base.IsToggledChanged();
 	}
@@ -225,6 +233,7 @@ public partial class CustomSwitch : SwitchView
 		if (Math.Abs(KnobFrame.TranslationX + _xRef) > 0.0)
 		{
 			this.AbortAnimation("SwitchAnimation");
+
 			new Animation
 			{
 				{0, 1, new Animation(v => KnobFrame.TranslationX = v, KnobFrame.TranslationX, -_xRef)},
@@ -252,7 +261,6 @@ public partial class CustomSwitch : SwitchView
 		{
 			this.AbortAnimation("SwitchAnimation");
 
-			IsToggled = true;
 			new Animation
 			{
 				{0, 1, new Animation(v => KnobFrame.TranslationX = v, KnobFrame.TranslationX, _xRef)},
@@ -261,6 +269,7 @@ public partial class CustomSwitch : SwitchView
 			{
 				this.AbortAnimation("SwitchAnimation");
 				CurrentState = SwitchStateEnum.Right;
+				IsToggled = true;
 				SendSwitchPanUpdatedEventArgs(PanStatusEnum.Completed);
 			});
 		}
