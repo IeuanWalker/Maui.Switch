@@ -176,6 +176,14 @@ public partial class CustomSwitch : SwitchView
 		set => SetValue(KnobLimitProperty, value);
 	}
 
+	public static readonly BindableProperty DisabledProperty = BindableProperty.Create(nameof(Disabled), typeof(bool), typeof(CustomSwitch), false);
+
+	public  bool Disabled
+	{
+		get => (bool)GetValue(DisabledProperty);
+		set => SetValue(DisabledProperty, value);
+	}
+
 	#endregion Properties
 
 	#region Events
@@ -211,6 +219,11 @@ public partial class CustomSwitch : SwitchView
 
 	protected override void IsToggledChanged()
 	{
+		if (Disabled)
+		{
+			return;
+		}
+
 		if (IsToggled && CurrentState != SwitchStateEnum.Right)
 		{
 			GoToRight();
@@ -303,6 +316,11 @@ public partial class CustomSwitch : SwitchView
 
 	void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 	{
+		if (Disabled)
+		{
+			return;
+		}
+
 		IsToggled = !IsToggled;
 	}
 
@@ -310,6 +328,11 @@ public partial class CustomSwitch : SwitchView
 
 	void PanGestureRecognizer_PanUpdated(object sender, PanUpdatedEventArgs e)
 	{
+		if (Disabled)
+		{
+			return;
+		}
+
 		this.AbortAnimation("SwitchAnimation");
 		double dragX = e.TotalX - _tmpTotalX;
 
