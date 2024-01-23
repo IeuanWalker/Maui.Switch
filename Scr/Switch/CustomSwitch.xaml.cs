@@ -211,6 +211,11 @@ public partial class CustomSwitch : SwitchView
 
 	protected override void IsToggledChanged()
 	{
+		if (!IsEnabled)
+		{
+			return;
+		}
+		
 		if (IsToggled && CurrentState != SwitchStateEnum.Right)
 		{
 			GoToRight();

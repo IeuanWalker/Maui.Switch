@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="App.Controls.CustomSwitchExamples.DisableSupportedSwitch"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
+    <switch:CustomSwitch BackgroundColor="White"
+                         HeightRequest="40"
+                         IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         KnobHeight="40"
+                         KnobLimit="Boundary"
+                         KnobStrokeThickness="1"
+                         KnobWidth="60"
+                         Stroke="DarkGray"
+                         StrokeThickness="1"
+                         SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
+                         Toggled="CustomSwitch_Toggled"
+                         ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         WidthRequest="120"
+                         IsEnabled="{Binding IsEnabled, Source={RelativeSource AncestorType={x:Type ContentView}}}">
+        <switch:CustomSwitch.StrokeShape>
+            <RoundRectangle CornerRadius="5" />
+        </switch:CustomSwitch.StrokeShape>
+        <switch:CustomSwitch.BackgroundContent>
+            <Grid ColumnDefinitions="60,60"
+                  HeightRequest="40"
+                  WidthRequest="120">
+                <Label Grid.Column="0"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       Text="OFF"
+                       TextColor="DarkGray"
+                       VerticalTextAlignment="Center" />
+                <Label Grid.Column="1"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       Text="ON"
+                       TextColor="DarkGray"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </switch:CustomSwitch.BackgroundContent>
+
+        <switch:CustomSwitch.KnobContent>
+            <Grid x:Name="KnobContent"
+                  Margin="60,0,0,0"
+                  ColumnDefinitions="60,60"
+                  HeightRequest="40"
+                  WidthRequest="120">
+                <Label x:Name="OffKnobLabel"
+                       Grid.Column="0"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       Text="OFF"
+                       TextColor="#dd2424"
+                       VerticalTextAlignment="Center" />
+                <Label x:Name="OnKnobLabel"
+                       Grid.Column="1"
+                       FontAttributes="Bold"
+                       FontAutoScalingEnabled="False"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       Text="ON"
+                       TextColor="#46d744"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </switch:CustomSwitch.KnobContent>
+    </switch:CustomSwitch>
+</ContentView>
