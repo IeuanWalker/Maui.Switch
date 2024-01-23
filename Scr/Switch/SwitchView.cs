@@ -40,12 +40,22 @@ public class SwitchView : ContentView, ISwitchView
 	/// </summary>
 	protected virtual void InvokeToggled()
 	{
+		if (!IsEnabled)
+		{
+			return;
+		}
+
 		Toggled?.Invoke(this, new ToggledEventArgs(IsToggled));
 		ToggledCommand?.Execute(IsToggled);
 	}
 
 	protected virtual void IsToggledChanged()
 	{
+		if (!IsEnabled)
+		{
+			return;
+		}
+		
 		Debug.WriteLine($"{nameof(IsToggled)} changed from {!IsToggled} to {IsToggled}");
 	}
 }

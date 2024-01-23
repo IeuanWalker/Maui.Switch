@@ -99,6 +99,17 @@
             <examples:Other5Switch IsToggled="True"
                                    Toggled="Switch_OnToggled"
                                    ToggledCommand="{Binding ToggledCommand}" />
+            <examples:DisableSupportedSwitch Margin="0,30,0,0"
+                                             Toggled="Switch_OnToggled"
+                                             ToggledCommand="{Binding ToggledCommand}" />
+            <examples:DisableSupportedSwitch IsEnabled="False"
+                                             IsToggled="False"
+                                             Toggled="Switch_OnToggled"
+                                             ToggledCommand="{Binding ToggledCommand}" />
+            <examples:DisableSupportedSwitch IsEnabled="False"
+                                             IsToggled="True"
+                                             Toggled="Switch_OnToggled"
+                                             ToggledCommand="{Binding ToggledCommand}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

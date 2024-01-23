@@ -73,6 +73,10 @@
 	  <Compile Update="Controls\BackButton.xaml.cs">
 	    <DependentUpon>BackButton.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Controls\CustomSwitchExamples\DisableSupportedSwitch.xaml.cs">
+	    <DependentUpon>DisableSupportedSwitch.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -125,6 +129,10 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\SwitchViewPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\CustomSwitchExamples\DisableSupportedSwitch.xaml">
+	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
