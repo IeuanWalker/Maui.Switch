@@ -2,7 +2,7 @@
 
 namespace IeuanWalker.Maui.Switch.Interfaces;
 
-public interface ISwitchView
+public interface ISwitchView : IContentView
 {
 	bool IsToggled { get; set; }
 	ICommand ToggledCommand { get; set; }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="App.Pages.IsEnabledTestPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App.Controls;assembly=App"
+             xmlns:examples="clr-namespace:App.Controls.CustomSwitchExamples;assembly=App"
+             Title="IsEnabled Test Page">
+    <ScrollView Padding="{StaticResource PagePadding}">
+        <VerticalStackLayout BackgroundColor="Transparent" MinimumHeightRequest="1000">
+            <controls:BackButton />
+
+            <Label Style="{StaticResource sectionHeading}" Text="IsEnabled false on load" />
+            <examples:IosSwitch IsEnabled="False" IsToggled="False" />
+            <examples:IosSwitch IsEnabled="False" IsToggled="True" />
+
+            <Label Style="{StaticResource sectionHeading}" Text="Dynamit IsEnabled" />
+            <HorizontalStackLayout>
+                <Label Style="{StaticResource sectionHeading}" Text="Toggle IsEnabled: " />
+                <examples:AndroidSwitch x:Name="DynamicToggle" />
+            </HorizontalStackLayout>
+
+            <examples:IosSwitch IsEnabled="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}" IsToggled="False" />
+            <examples:IosSwitch IsEnabled="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}" IsToggled="True" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

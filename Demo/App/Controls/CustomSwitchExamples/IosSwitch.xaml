@@ -5,16 +5,25 @@
              xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
     <switch:CustomSwitch HeightRequest="40"
                          HorizontalKnobMargin="1"
+                         IsEnabled="{Binding IsEnabled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
                          IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
                          KnobBackgroundColor="White"
                          KnobHeight="36"
                          KnobLimit="Boundary"
                          KnobWidth="36"
+                         Opacity="1"
                          SemanticProperties.Hint="{Binding AccessibilityHint, Source={RelativeSource AncestorType={x:Type ContentView}}}"
                          SwitchPanUpdate="CustomSwitch_SwitchPanUpdate"
                          Toggled="CustomSwitch_Toggled"
                          ToggledCommand="{Binding ToggledCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
                          WidthRequest="70">
+        <switch:CustomSwitch.Triggers>
+            <DataTrigger Binding="{Binding IsEnabled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                         TargetType="switch:CustomSwitch"
+                         Value="False">
+                <Setter Property="Opacity" Value="0.6" />
+            </DataTrigger>
+        </switch:CustomSwitch.Triggers>
         <switch:CustomSwitch.StrokeShape>
             <RoundRectangle CornerRadius="20" />
         </switch:CustomSwitch.StrokeShape>
