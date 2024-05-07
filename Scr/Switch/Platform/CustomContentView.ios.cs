@@ -10,10 +10,13 @@ public class CustomContentView : ContentView
 	public CustomContentView(IContentView virtualView)
 	{
 		_switchView = (ISwitchView)virtualView;
+
 		_switchUIAccessibilityTrait = new UISwitch().AccessibilityTraits;
 
 		IsAccessibilityElement = true;
 	}
+
+	public override bool UserInteractionEnabled { get => _switchView.IsEnabled; }
 
 	public override string? AccessibilityValue
 	{
