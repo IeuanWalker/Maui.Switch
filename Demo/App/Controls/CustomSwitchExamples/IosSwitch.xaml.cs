@@ -30,6 +30,13 @@ public partial class IosSwitch : ContentView
 		set => SetValue(AccessibilityHintProperty, value);
 	}
 
+	public static readonly BindableProperty IsBusyProperty = BindableProperty.Create(nameof(IsBusy), typeof(bool), typeof(CustomSwitch), false);
+	public bool IsBusy
+	{
+		get => (bool)GetValue(IsBusyProperty);
+		set => SetValue(IsBusyProperty, value);
+	}
+
 	public static readonly BindableProperty ToggledCommandProperty = BindableProperty.Create(nameof(ToggledCommand), typeof(ICommand), typeof(IosSwitch));
 
 	public ICommand ToggledCommand

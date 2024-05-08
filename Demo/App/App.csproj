@@ -74,6 +74,9 @@
 	  <Compile Update="Controls\BackButton.xaml.cs">
 	    <DependentUpon>BackButton.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\IsBusyTestPage.xaml.cs">
+	    <DependentUpon>IsBusyTestPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\IsEnabledTestPage.xaml.cs">
 	    <DependentUpon>IsEnabledTestPage.xaml</DependentUpon>
 	  </Compile>
@@ -117,6 +120,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Controls\SwitchViewExamples\ImageSwitch.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\IsBusyTestPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\IsEnabledTestPage.xaml">

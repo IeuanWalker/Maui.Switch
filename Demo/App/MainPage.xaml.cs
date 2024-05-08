@@ -29,6 +29,11 @@ public partial class MainPage : ContentPage
 		await Navigation.PushAsync(new IsEnabledTestPage());
 	}
 
+	async void IsBusyBtn_Clicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new IsBusyTestPage());
+	}
+
 	async void PanGestureBtn_Clicked(object sender, EventArgs e)
 	{
 		await Navigation.PushAsync(new PanGestureTestPage());
