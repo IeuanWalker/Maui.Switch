@@ -176,6 +176,20 @@ public partial class CustomSwitch : SwitchView
 		set => SetValue(KnobLimitProperty, value);
 	}
 
+	public static readonly BindableProperty IsBusyProperty = BindableProperty.Create(nameof(IsBusy), typeof(bool), typeof(CustomSwitch), false);
+	public bool IsBusy
+	{
+		get => (bool)GetValue(IsBusyProperty);
+		set => SetValue(IsBusyProperty, value);
+	}
+
+	public static readonly BindableProperty IsBusyContentProperty = BindableProperty.Create(nameof(IsBusyContent), typeof(View), typeof(CustomSwitch), null);
+	public View? IsBusyContent
+	{
+		get => (View?)GetValue(IsBusyContentProperty);
+		set => SetValue(IsBusyContentProperty, value);
+	}
+
 	#endregion Properties
 
 	#region Events
@@ -205,8 +219,6 @@ public partial class CustomSwitch : SwitchView
 
 			HasLoaded = true;
 		};
-
-		
 	}
 
 	protected override void IsToggledChanged()
@@ -215,7 +227,7 @@ public partial class CustomSwitch : SwitchView
 		{
 			return;
 		}
-		
+
 		if (IsToggled && CurrentState != SwitchStateEnum.Right)
 		{
 			GoToRight();

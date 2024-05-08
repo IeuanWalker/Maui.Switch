@@ -10,6 +10,7 @@
             <controls:CustomButton Clicked="SwitchViewBtn_Clicked" Text="SwitchView examples" />
             <controls:CustomButton Clicked="AccessibilityBtn_Clicked" Text="Accessiblity tests" />
             <controls:CustomButton Clicked="IsEnabledBtn_Clicked" Text="IsEnabled tests" />
+            <controls:CustomButton Clicked="IsBusyBtn_Clicked" Text="IsBusy tests" />
             <controls:CustomButton Clicked="PanGestureBtn_Clicked" Text="PanGesture tests" />
         </VerticalStackLayout>
     </ContentPage.Content>

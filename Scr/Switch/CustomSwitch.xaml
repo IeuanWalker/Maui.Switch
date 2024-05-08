@@ -33,6 +33,7 @@
                     StrokeThickness="{Binding KnobStrokeThickness, Source={RelativeSource AncestorType={x:Type ContentView}}}"
                     VerticalOptions="Center"
                     WidthRequest="{Binding KnobWidth, Source={RelativeSource AncestorType={x:Type ContentView}}}" />
+            <ContentView Content="{Binding IsBusyContent, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=1}}" IsVisible="{Binding IsBusy, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=1}}" />
         </Grid>
     </view:SwitchView.Content>
 </view:SwitchView>
