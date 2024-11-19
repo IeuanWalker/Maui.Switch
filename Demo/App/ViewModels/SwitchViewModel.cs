@@ -13,7 +13,7 @@ public partial class SwitchViewModel : ObservableObject
 	{
 		if (EnableCommands)
 		{
-			await Application.Current!.MainPage!.DisplayAlert("Switch toggled (Command)", $"New value: {value}", "OK").ConfigureAwait(false);
+			await Application.Current!.Windows[0].Page!.DisplayAlert("Switch toggled (Command)", $"New value: {value}", "OK").ConfigureAwait(false);
 		}
 	}
 }
