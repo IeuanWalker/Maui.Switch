@@ -40,7 +40,7 @@ public partial class CustomSwitch : SwitchView
 		set => SetValue(WidthRequestProperty, value);
 	}
 
-	public static readonly BindableProperty StrokeShapeProperty = BindableProperty.Create(nameof(StrokeShape), typeof(IShape), typeof(CustomSwitch), new Rect());
+	public static readonly BindableProperty StrokeShapeProperty = BindableProperty.Create(nameof(StrokeShape), typeof(IShape), typeof(CustomSwitch), new Rectangle());
 
 	[TypeConverter(typeof(StrokeShapeTypeConverter))]
 	public IShape? StrokeShape
@@ -126,7 +126,7 @@ public partial class CustomSwitch : SwitchView
 		set => SetValue(KnobBackgroundColorProperty, value);
 	}
 
-	public static readonly BindableProperty KnobStrokeShapeProperty = BindableProperty.Create(nameof(KnobStrokeShape), typeof(IShape), typeof(CustomSwitch), new Rect());
+	public static readonly BindableProperty KnobStrokeShapeProperty = BindableProperty.Create(nameof(KnobStrokeShape), typeof(IShape), typeof(CustomSwitch), new Rectangle());
 
 	[TypeConverter(typeof(StrokeShapeTypeConverter))]
 	public IShape? KnobStrokeShape
