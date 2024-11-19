@@ -2,7 +2,9 @@
 <ContentView x:Class="App.Controls.CustomSwitchExamples.IosSwitch"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
+             xmlns:control="clr-namespace:App.Controls.CustomSwitchExamples"
+             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch"
+             x:DataType="control:IosSwitch">
     <switch:CustomSwitch HeightRequest="40"
                          HorizontalKnobMargin="1"
                          IsBusy="{Binding IsBusy, Source={RelativeSource AncestorType={x:Type ContentView}}}"

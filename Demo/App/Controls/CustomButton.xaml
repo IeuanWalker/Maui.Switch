@@ -2,7 +2,9 @@
 <ContentView x:Class="App.Controls.CustomButton"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:stateButton="clr-namespace:IeuanWalker.Maui.StateButton;assembly=IeuanWalker.Maui.StateButton">
+             xmlns:control="clr-namespace:App.Controls"
+             xmlns:stateButton="clr-namespace:IeuanWalker.Maui.StateButton;assembly=IeuanWalker.Maui.StateButton"
+             x:DataType="control:CustomButton">
     <ContentView.ControlTemplate>
         <ControlTemplate>
             <stateButton:StateButton Padding="20,20"

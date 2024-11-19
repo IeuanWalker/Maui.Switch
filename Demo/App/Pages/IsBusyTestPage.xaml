@@ -14,18 +14,24 @@
                 <examples:AndroidSwitch x:Name="DynamicToggle" />
             </HorizontalStackLayout>
 
-            <examples:IosSwitch IsBusy="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}" IsToggled="False">
+            <examples:IosSwitch x:DataType="examples:AndroidSwitch"
+                                IsBusy="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
+                                IsToggled="False">
                 <examples:IosSwitch.Triggers>
-                    <DataTrigger Binding="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
+                    <DataTrigger x:DataType="examples:AndroidSwitch"
+                                 Binding="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
                                  TargetType="examples:IosSwitch"
                                  Value="True">
                         <Setter Property="IsEnabled" Value="False" />
                     </DataTrigger>
                 </examples:IosSwitch.Triggers>
             </examples:IosSwitch>
-            <examples:IosSwitch IsBusy="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}" IsToggled="True">
+            <examples:IosSwitch x:DataType="examples:AndroidSwitch"
+                                IsBusy="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
+                                IsToggled="True">
                 <examples:IosSwitch.Triggers>
-                    <DataTrigger Binding="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
+                    <DataTrigger x:DataType="examples:AndroidSwitch"
+                                 Binding="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
                                  TargetType="examples:IosSwitch"
                                  Value="True">
                         <Setter Property="IsEnabled" Value="False" />
