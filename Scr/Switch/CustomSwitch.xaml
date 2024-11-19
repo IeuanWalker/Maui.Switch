@@ -4,7 +4,9 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:view="clr-namespace:IeuanWalker.Maui.Switch">
     <view:SwitchView.Content>
-        <Grid AutomationProperties.ExcludedWithChildren="True" AutomationProperties.IsInAccessibleTree="False">
+        <Grid x:DataType="view:CustomSwitch"
+              AutomationProperties.ExcludedWithChildren="True"
+              AutomationProperties.IsInAccessibleTree="False">
             <Grid.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />

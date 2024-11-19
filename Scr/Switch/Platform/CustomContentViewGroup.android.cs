@@ -29,7 +29,7 @@ public class CustomContentViewGroup : ContentViewGroup
 
 	public override void OnInitializeAccessibilityNodeInfo(AccessibilityNodeInfo? info)
 	{
-		if (info is not null)
+		if(info is not null)
 		{
 			info.Checkable = true;
 			info.Checked = _switchView.IsToggled;

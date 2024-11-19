@@ -19,8 +19,12 @@
                 <examples:AndroidSwitch x:Name="DynamicToggle" />
             </HorizontalStackLayout>
 
-            <examples:IosSwitch IsEnabled="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}" IsToggled="False" />
-            <examples:IosSwitch IsEnabled="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}" IsToggled="True" />
+            <examples:IosSwitch x:DataType="examples:AndroidSwitch"
+                                IsEnabled="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
+                                IsToggled="False" />
+            <examples:IosSwitch x:DataType="examples:AndroidSwitch"
+                                IsEnabled="{Binding Source={x:Reference DynamicToggle}, Path=IsToggled}"
+                                IsToggled="True" />
 
         </VerticalStackLayout>
     </ScrollView>

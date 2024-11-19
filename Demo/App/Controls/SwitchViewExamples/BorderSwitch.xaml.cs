@@ -27,7 +27,7 @@ public partial class BorderSwitch : SwitchView
 
 	void StyleSwitch()
 	{
-		if (IsToggled)
+		if(IsToggled)
 		{
 			SwitchBackground.StrokeShape = new RoundRectangle
 			{

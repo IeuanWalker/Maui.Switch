@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView x:Class="App.Controls.CustomSwitchExamples.Other4Switch"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch">
+             xmlns:control="clr-namespace:App.Controls.CustomSwitchExamples"
+             xmlns:switch="clr-namespace:IeuanWalker.Maui.Switch;assembly=IeuanWalker.Maui.Switch"
+             x:DataType="control:Other4Switch">
     <switch:CustomSwitch BackgroundColor="#f3f3f2"
                          HeightRequest="50"
                          IsToggled="{Binding IsToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"

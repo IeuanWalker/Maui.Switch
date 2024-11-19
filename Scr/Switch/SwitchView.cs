@@ -28,7 +28,7 @@ public class SwitchView : ContentView, ISwitchView
 	{
 		PropertyChanged += (sender, args) =>
 		{
-			if (args.PropertyName?.Equals(nameof(IsToggled)) ?? false)
+			if(args.PropertyName?.Equals(nameof(IsToggled)) ?? false)
 			{
 				IsToggledChanged();
 			}
@@ -40,7 +40,7 @@ public class SwitchView : ContentView, ISwitchView
 	/// </summary>
 	protected virtual void InvokeToggled()
 	{
-		if (!IsEnabled)
+		if(!IsEnabled)
 		{
 			return;
 		}
@@ -51,11 +51,11 @@ public class SwitchView : ContentView, ISwitchView
 
 	protected virtual void IsToggledChanged()
 	{
-		if (!IsEnabled)
+		if(!IsEnabled)
 		{
 			return;
 		}
-		
+
 		Debug.WriteLine($"{nameof(IsToggled)} changed from {!IsToggled} to {IsToggled}");
 	}
 }

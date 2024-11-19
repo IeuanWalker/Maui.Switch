@@ -208,7 +208,7 @@ public partial class CustomSwitch : SwitchView
 
 		Loaded += (sender, args) =>
 		{
-			if (IsToggled)
+			if(IsToggled)
 			{
 				GoToRight(100);
 			}
@@ -223,21 +223,21 @@ public partial class CustomSwitch : SwitchView
 
 	protected override void IsToggledChanged()
 	{
-		if (!IsEnabled)
+		if(!IsEnabled)
 		{
 			return;
 		}
 
-		if (IsToggled && CurrentState != SwitchStateEnum.Right)
+		if(IsToggled && CurrentState != SwitchStateEnum.Right)
 		{
 			GoToRight();
 		}
-		else if (!IsToggled && CurrentState != SwitchStateEnum.Left)
+		else if(!IsToggled && CurrentState != SwitchStateEnum.Left)
 		{
 			GoToLeft();
 		}
 
-		if (HasLoaded)
+		if(HasLoaded)
 		{
 			InvokeToggled();
 		}
@@ -247,7 +247,7 @@ public partial class CustomSwitch : SwitchView
 
 	void GoToLeft(double percentage = 0.0)
 	{
-		if (Math.Abs(KnobFrame.TranslationX + _xRef) > 0.0)
+		if(Math.Abs(KnobFrame.TranslationX + _xRef) > 0.0)
 		{
 			this.AbortAnimation("SwitchAnimation");
 
@@ -274,7 +274,7 @@ public partial class CustomSwitch : SwitchView
 
 	void GoToRight(double percentage = 0.0)
 	{
-		if (Math.Abs(KnobFrame.TranslationX - _xRef) > 0.0)
+		if(Math.Abs(KnobFrame.TranslationX - _xRef) > 0.0)
 		{
 			this.AbortAnimation("SwitchAnimation");
 
@@ -312,7 +312,7 @@ public partial class CustomSwitch : SwitchView
 				: Math.Abs(KnobFrame.TranslationX + _xRef) / (2 * _xRef) * 100
 		};
 
-		if (!double.IsNaN(ev.Percentage))
+		if(!double.IsNaN(ev.Percentage))
 		{
 			SwitchPanUpdate?.Invoke(this, ev);
 		}
@@ -330,7 +330,7 @@ public partial class CustomSwitch : SwitchView
 		this.AbortAnimation("SwitchAnimation");
 		double dragX = e.TotalX - _tmpTotalX;
 
-		switch (e.StatusType)
+		switch(e.StatusType)
 		{
 			case GestureStatus.Running:
 				KnobFrame.TranslationX = Math.Min(_xRef, Math.Max(-_xRef, KnobFrame.TranslationX + dragX));
@@ -343,7 +343,7 @@ public partial class CustomSwitch : SwitchView
 					? Math.Abs(KnobFrame.TranslationX - _xRef) / (2 * _xRef) * 100
 					: Math.Abs(KnobFrame.TranslationX + _xRef) / (2 * _xRef) * 100;
 
-				if (KnobFrame.TranslationX > 0)
+				if(KnobFrame.TranslationX > 0)
 				{
 					GoToRight(percentage);
 				}
@@ -365,7 +365,7 @@ public partial class CustomSwitch : SwitchView
 	{
 		base.OnSizeAllocated(width, height);
 
-		if (width <= 0 && height <= 0)
+		if(width <= 0 && height <= 0)
 		{
 			return;
 		}
@@ -375,7 +375,7 @@ public partial class CustomSwitch : SwitchView
 
 	static void SizeRequestChanged(BindableObject bindable, object oldValue, object newValue)
 	{
-		if (bindable is not CustomSwitch view)
+		if(bindable is not CustomSwitch view)
 		{
 			return;
 		}
@@ -392,7 +392,7 @@ public partial class CustomSwitch : SwitchView
 		view.SetBaseWidthRequest(Math.Max(view.BackgroundFrame.WidthRequest, view.KnobFrame.WidthRequest * 2));
 
 		// Calculate knob position
-		switch (view.KnobLimit)
+		switch(view.KnobLimit)
 		{
 			case KnobLimitEnum.Boundary:
 				view._xRef = ((view.BackgroundFrame.WidthRequest - view.KnobFrame.WidthRequest) / 2) - view.HorizontalKnobMargin;
