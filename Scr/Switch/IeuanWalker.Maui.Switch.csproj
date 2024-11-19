@@ -7,7 +7,9 @@
     <Nullable>enable</Nullable>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-  
+    <MauiEnableXamlCBindingWithSourceCompilation>true</MauiEnableXamlCBindingWithSourceCompilation>
+  </PropertyGroup>
+  <PropertyGroup>
     <GitInfoReportImportance>high</GitInfoReportImportance>
     <PackageId>IeuanWalker.Maui.Switch</PackageId>
     <Summary>A control that allows you to design any type of switch/ toggle for .NET MAUI. It's also 100% accessible.</Summary>
