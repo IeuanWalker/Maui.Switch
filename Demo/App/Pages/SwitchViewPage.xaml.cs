@@ -15,7 +15,7 @@ public partial class SwitchViewPage : ContentPage
 
 	async void Switch_OnToggled(object sender, ToggledEventArgs e)
 	{
-		if (_viewModel.EnableEvents)
+		if(_viewModel.EnableEvents)
 		{
 			await Application.Current!.Windows[0].Page!.DisplayAlert("Switch toggled (Event)", $"New value: {e.Value}", "OK").ConfigureAwait(false);
 		}

@@ -11,7 +11,7 @@ public partial class SwitchViewModel : ObservableObject
 	[RelayCommand]
 	public async Task Toggled(bool value)
 	{
-		if (EnableCommands)
+		if(EnableCommands)
 		{
 			await Application.Current!.Windows[0].Page!.DisplayAlert("Switch toggled (Command)", $"New value: {value}", "OK").ConfigureAwait(false);
 		}
