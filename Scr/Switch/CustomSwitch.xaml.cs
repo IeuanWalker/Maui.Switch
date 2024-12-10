@@ -375,7 +375,7 @@ public partial class CustomSwitch : SwitchView
 
 	static void SizeRequestChanged(BindableObject bindable, object oldValue, object newValue)
 	{
-		if(bindable is not CustomSwitch view)
+		if(bindable is not CustomSwitch view || !view.HasLoaded)
 		{
 			return;
 		}
