@@ -29,6 +29,6 @@ public partial class PanGestureTestPage : ContentPage
 
 	async void Switch_OnToggled(object sender, ToggledEventArgs e)
 	{
-		await Application.Current!.Windows[0].Page!.DisplayAlert("Switch toggled (Event)", $"New value: {e.Value}", "OK").ConfigureAwait(false);
+		await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Switch toggled (Event)", $"New value: {e.Value}", "OK").ConfigureAwait(false);
 	}
 }

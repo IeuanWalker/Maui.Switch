@@ -2,6 +2,4 @@
 
 namespace IeuanWalker.Maui.Switch.Handler;
 
-public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler
-{
-}
+public partial class SwitchViewHandler : ContentViewHandler, ISwitchViewHandler;

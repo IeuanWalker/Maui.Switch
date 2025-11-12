@@ -66,8 +66,8 @@ public partial class Theme2Switch : ContentView
 			}
 		}
 
-		customSwitch.Background = new LinearGradientBrush(new GradientStopCollection
-		{
+		customSwitch.Background = new LinearGradientBrush(
+		[
 			new GradientStop
 			{
 				Color =  ColorAnimationUtil.ColorAnimation(fromColorGradient1, toColorGradient1, t),
@@ -78,7 +78,7 @@ public partial class Theme2Switch : ContentView
 				Color = ColorAnimationUtil.ColorAnimation(fromColorGradient2, toColorGradient2, t),
 				Offset = 1
 			}
-		});
+		]);
 	}
 
 	void CustomSwitch_Toggled(object sender, ToggledEventArgs e)

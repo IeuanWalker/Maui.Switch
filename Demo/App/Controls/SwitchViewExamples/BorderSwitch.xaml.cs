@@ -36,8 +36,8 @@ public partial class BorderSwitch : SwitchView
 			SwitchBackground.Stroke = new LinearGradientBrush()
 			{
 				EndPoint = new Point(1, 0),
-				GradientStops = new GradientStopCollection
-				{
+				GradientStops =
+				[
 					new GradientStop
 					{
 						Offset = 0.1f,
@@ -48,13 +48,13 @@ public partial class BorderSwitch : SwitchView
 						Offset = 1f,
 						Color = Color.FromArgb("#a8ff78")
 					}
-				}
+				]
 			};
 			SwitchBackground.Background = new LinearGradientBrush()
 			{
 				EndPoint = new Point(1, 0),
-				GradientStops = new GradientStopCollection
-				{
+				GradientStops =
+				[
 					new GradientStop
 					{
 						Offset = 0.1f,
@@ -70,7 +70,7 @@ public partial class BorderSwitch : SwitchView
 						Offset = 1f,
 						Color = Color.FromArgb("#a8ff78")
 					}
-				}
+				]
 			};
 			SwitchText.Text = "On";
 		}
@@ -83,8 +83,8 @@ public partial class BorderSwitch : SwitchView
 			SwitchBackground.Stroke = new LinearGradientBrush()
 			{
 				EndPoint = new Point(1, 0),
-				GradientStops = new GradientStopCollection
-				{
+				GradientStops =
+				[
 					new GradientStop
 					{
 						Offset = 0.1f,
@@ -95,13 +95,13 @@ public partial class BorderSwitch : SwitchView
 						Offset = 1f,
 						Color = Colors.Transparent
 					}
-				}
+				]
 			};
 			SwitchBackground.Background = new LinearGradientBrush()
 			{
 				EndPoint = new Point(1, 0),
-				GradientStops = new GradientStopCollection
-				{
+				GradientStops =
+				[
 					new GradientStop
 					{
 						Offset = 0.1f,
@@ -117,7 +117,7 @@ public partial class BorderSwitch : SwitchView
 						Offset = 1f,
 						Color = Colors.Transparent
 					}
-				}
+				]
 			};
 			SwitchText.Text = "Off";
 		}

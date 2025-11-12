@@ -40,8 +40,8 @@ public partial class Other2Switch : ContentView
 
 		double t = e.Percentage * 0.01;
 
-		customSwitch.KnobBackground = new LinearGradientBrush(new GradientStopCollection
-		{
+		customSwitch.KnobBackground = new LinearGradientBrush(
+		[
 			new GradientStop
 			{
 				Color =  ColorAnimationUtil.ColorAnimation(fromColorGradient1, toColorGradient1, t),
@@ -52,7 +52,7 @@ public partial class Other2Switch : ContentView
 				Color = ColorAnimationUtil.ColorAnimation(fromColorGradient2, toColorGradient2, t),
 				Offset = 1
 			}
-		}, new Point(0.6, 1), new Point(1, 0));
+		], new Point(0.6, 1), new Point(1, 0));
 	}
 
 	void CustomSwitch_Toggled(object sender, ToggledEventArgs e)

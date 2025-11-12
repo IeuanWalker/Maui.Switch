@@ -6,12 +6,14 @@ using Microsoft.Maui.Platform;
 using String = Java.Lang.String;
 
 namespace IeuanWalker.Maui.Switch.Platform;
+
 public class CustomContentViewGroup : ContentViewGroup
 {
 	readonly string _textOn;
 	readonly string _textOff;
 
 	readonly ISwitchView _switchView;
+
 	public CustomContentViewGroup(Context context, IContentView virtualView) : base(context)
 	{
 		var tempSwitch = new Android.Widget.Switch(context);
@@ -32,7 +34,16 @@ public class CustomContentViewGroup : ContentViewGroup
 		if(info is not null)
 		{
 			info.Checkable = true;
-			info.Checked = _switchView.IsToggled;
+
+			if(OperatingSystem.IsAndroidVersionAtLeast(36))
+			{
+				info.CheckedState = _switchView.IsToggled ? CheckedState.True : CheckedState.False;
+			}
+			else
+			{
+				info.Checked = _switchView.IsToggled;
+			}
+
 			info.Text = _switchView.IsToggled ? _textOn : _textOff;
 		}
 

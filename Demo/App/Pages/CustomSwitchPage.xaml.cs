@@ -17,7 +17,7 @@ public partial class CustomSwitchPage : ContentPage
 	{
 		if(_viewModel.EnableEvents)
 		{
-			await Application.Current!.Windows[0].Page!.DisplayAlert("Switch toggled (Event)", $"New value: {e.Value}", "OK").ConfigureAwait(false);
+			await Application.Current!.Windows[0].Page!.DisplayAlertAsync("Switch toggled (Event)", $"New value: {e.Value}", "OK").ConfigureAwait(false);
 		}
 	}
 }
